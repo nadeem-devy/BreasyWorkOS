@@ -8,6 +8,7 @@ export interface ActiveUser {
   fullName: string;
   role: string;
   market: string | null;
+  avatarUrl: string | null;
   status: string;
   currentApp: string | null;
   currentUrl: string | null;
@@ -25,11 +26,16 @@ export function useActiveUsers() {
   const [loading, setLoading] = useState(true);
 
   const fetchUsers = useCallback(async () => {
-    const { data, error } = await supabase
-      .from('v_user_current_status')
-      .select('*');
+    const [{ data, error }, { data: profiles }] = await Promise.all([
+      supabase.from('v_user_current_status').select('*'),
+      supabase.from('OS_profiles').select('id, avatar_url'),
+    ]);
 
     if (!error && data) {
+      // Build avatar map
+      const avatarMap: Record<string, string | null> = {};
+      for (const p of profiles ?? []) avatarMap[p.id] = p.avatar_url;
+
       // Deduplicate by user_id (view can return duplicates)
       const seen = new Set<string>();
       const unique = data.filter((row: Record<string, unknown>) => {
@@ -44,6 +50,7 @@ export function useActiveUsers() {
           fullName: row.full_name as string,
           role: row.role as string,
           market: row.market as string | null,
+          avatarUrl: avatarMap[row.user_id as string] ?? null,
           status: row.status as string,
           currentApp: row.current_app as string | null,
           currentUrl: row.current_url as string | null,

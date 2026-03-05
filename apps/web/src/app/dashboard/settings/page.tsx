@@ -1,8 +1,8 @@
 'use client';
 
 import { SupabaseProvider, useSupabase } from '@/components/providers/SupabaseProvider';
-import { Settings, Plus, Trash2, Download, Chrome } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { Settings, Plus, Trash2, Download, Chrome, Camera } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
 
 interface UserProfile {
   id: string;
@@ -13,6 +13,7 @@ interface UserProfile {
   phone: string | null;
   is_active: boolean;
   chrome_profile: string | null;
+  avatar_url: string | null;
 }
 
 function SettingsContent() {
@@ -25,6 +26,26 @@ function SettingsContent() {
   const [inviteRole, setInviteRole] = useState('market_manager');
   const [inviteMarket, setInviteMarket] = useState('');
   const [invitePhone, setInvitePhone] = useState('');
+  const [uploadingAvatar, setUploadingAvatar] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [avatarUserId, setAvatarUserId] = useState<string | null>(null);
+
+  async function handleAvatarUpload(userId: string, file: File) {
+    setUploadingAvatar(userId);
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('userId', userId);
+    try {
+      const res = await fetch('/api/admin/avatar', { method: 'POST', body: formData });
+      const data = await res.json();
+      if (data.avatarUrl) {
+        setUsers((prev) =>
+          prev.map((u) => (u.id === userId ? { ...u, avatar_url: data.avatarUrl } : u))
+        );
+      }
+    } catch { /* ignore */ }
+    setUploadingAvatar(null);
+  }
 
   useEffect(() => {
     fetch('/api/admin/profiles')
@@ -185,7 +206,34 @@ function SettingsContent() {
             <tbody>
               {users.map((user) => (
                 <tr key={user.id} className="border-b border-gray-100 last:border-0">
-                  <td className="px-4 py-2.5 font-medium text-gray-900">{user.full_name}</td>
+                  <td className="px-4 py-2.5">
+                    <div className="flex items-center gap-2.5">
+                      <button
+                        className="relative shrink-0 group"
+                        onClick={() => {
+                          setAvatarUserId(user.id);
+                          fileInputRef.current?.click();
+                        }}
+                        title="Upload photo"
+                      >
+                        {user.avatar_url ? (
+                          <img src={user.avatar_url} alt={user.full_name} className="h-8 w-8 rounded-full object-cover" />
+                        ) : (
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-xs font-semibold text-gray-500">
+                            {user.full_name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
+                          </div>
+                        )}
+                        <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
+                          {uploadingAvatar === user.id ? (
+                            <div className="h-3 w-3 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                          ) : (
+                            <Camera size={12} className="text-white" />
+                          )}
+                        </div>
+                      </button>
+                      <span className="font-medium text-gray-900">{user.full_name}</span>
+                    </div>
+                  </td>
                   <td className="px-4 py-2.5 text-gray-600">{user.email}</td>
                   <td className="px-4 py-2.5">
                     <select
@@ -230,6 +278,20 @@ function SettingsContent() {
           </table>
         </div>
       )}
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file && avatarUserId) {
+            handleAvatarUpload(avatarUserId, file);
+          }
+          e.target.value = '';
+        }}
+      />
     </div>
   );
 }

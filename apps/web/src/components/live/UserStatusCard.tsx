@@ -32,15 +32,34 @@ export default function UserStatusCard({ user, flagCount = 0 }: Props) {
       flagCount > 0 ? 'border-amber-300 bg-amber-50/30' : 'border-gray-200'
     }`}>
       <div className="flex items-start justify-between">
-        <div className="flex items-center gap-2">
-          <StatusDot status={user.status} />
-          <span className="text-sm font-medium text-gray-900">{user.fullName}</span>
-          {flagCount > 0 && (
-            <span className="flex items-center gap-1 rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700" title="Suspicious activity detected">
-              <AlertTriangle size={10} />
-              {flagCount}
-            </span>
-          )}
+        <div className="flex items-center gap-2.5">
+          <div className="relative shrink-0">
+            {user.avatarUrl ? (
+              <img
+                src={user.avatarUrl}
+                alt={user.fullName}
+                className="h-8 w-8 rounded-full object-cover"
+              />
+            ) : (
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-xs font-semibold text-gray-500">
+                {user.fullName.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
+              </div>
+            )}
+            <div className="absolute -bottom-0.5 -right-0.5">
+              <StatusDot status={user.status} />
+            </div>
+          </div>
+          <div className="min-w-0">
+            <div className="flex items-center gap-1.5">
+              <span className="text-sm font-medium text-gray-900 truncate">{user.fullName}</span>
+              {flagCount > 0 && (
+                <span className="flex items-center gap-1 rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700" title="Suspicious activity detected">
+                  <AlertTriangle size={10} />
+                  {flagCount}
+                </span>
+              )}
+            </div>
+          </div>
         </div>
         {user.currentApp && <AppBadge app={user.currentApp} />}
       </div>
