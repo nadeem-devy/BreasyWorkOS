@@ -1,0 +1,22 @@
+CREATE TABLE melio_events (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  user_id UUID REFERENCES profiles(id),
+  event_type TEXT NOT NULL,
+  melio_payment_id TEXT NOT NULL,
+  vendor_name TEXT NOT NULL,
+  vendor_id TEXT,
+  amount DECIMAL(12, 2) NOT NULL,
+  currency TEXT DEFAULT 'USD',
+  payment_method TEXT,
+  initiated_at TIMESTAMPTZ,
+  approved_at TIMESTAMPTZ,
+  sent_at TIMESTAMPTZ,
+  completed_at TIMESTAMPTZ,
+  failed_at TIMESTAMPTZ,
+  payment_status TEXT NOT NULL,
+  failure_reason TEXT,
+  wo_id TEXT,
+  bill_number TEXT,
+  metadata JSONB DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);

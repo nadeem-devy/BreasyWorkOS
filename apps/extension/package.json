@@ -1,0 +1,19 @@
+{
+  "name": "@breasy/extension",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --watch --mode development",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.280",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.7.0",
+    "webpack": "^5.97.0",
+    "webpack-cli": "^6.0.0"
+  }
+}

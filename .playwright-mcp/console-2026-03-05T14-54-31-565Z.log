@@ -1,0 +1,3 @@
+[ 1658414ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://caursmdeoghqixudiscb.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 2077079ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://caursmdeoghqixudiscb.supabase.co/rest/v1/OS_bubble_events?select=wo_id%2Ccompany%2Cuser_id%2Cevent_type%2Ccreated_at%2Cprofiles%21inner%28full_name%29&order=created_at.desc&limit=500:0
+[ 2078123ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://caursmdeoghqixudiscb.supabase.co/rest/v1/OS_bubble_events?select=wo_id%2Ccompany%2Cuser_id%2Cevent_type%2Ccreated_at%2Cprofiles%21inner%28full_name%29&order=created_at.desc&limit=500:0

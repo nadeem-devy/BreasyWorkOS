@@ -1,0 +1,5 @@
+[   17426ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://caursmdeoghqixudiscb.supabase.co/auth/v1/token?grant_type=password:0
+[   92860ms] NavigatorLockAcquireTimeoutError: Acquiring an exclusive Navigator LockManager lock "lock:sb-caursmdeoghqixudiscb-auth-token" timed out waiting 10000ms
+    at SupabaseAuthClient.navigatorLock [as lock] (http://localhost:3333/_next/static/chunks/node_modules_a09f4a44._.js:11411:19)
+    at async SupabaseAuthClient._acquireLock (http://localhost:3333/_next/static/chunks/node_modules_a09f4a44._.js:13744:20)
+    at async SupabaseAuthClient.getUser (http://localhost:3333/_next/static/chunks/node_modules_a09f4a44._.js:13884:24)

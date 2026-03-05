@@ -1,0 +1,1 @@
+[   31253ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0

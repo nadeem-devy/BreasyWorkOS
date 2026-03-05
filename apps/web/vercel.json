@@ -1,0 +1,10 @@
+{
+  "crons": [
+    { "path": "/api/cron/gmail-poll", "schedule": "*/2 * * * *" },
+    { "path": "/api/cron/dialpad-poll", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/melio-poll", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/bubble-sync", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/bubble-reconcile", "schedule": "0 * * * *" },
+    { "path": "/api/cron/partition-check", "schedule": "0 0 25 * *" }
+  ]
+}

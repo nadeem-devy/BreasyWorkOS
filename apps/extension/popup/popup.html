@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breasy WorkOS Tracker</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; width: 280px; background: #fff; }
+    .header { background: #1c2b3d; color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 8px; }
+    .header .logo { width: 24px; height: 24px; background: rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; }
+    .header h1 { font-size: 13px; font-weight: 600; }
+    .content { padding: 16px; }
+    .status { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .status-dot.active { background: #10b981; }
+    .status-dot.idle { background: #f59e0b; }
+    .status-dot.offline { background: #d1d5db; }
+    .status-text { font-size: 13px; color: #374151; }
+    .info-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 12px; border-bottom: 1px solid #f3f4f6; }
+    .info-row:last-child { border: none; }
+    .info-label { color: #6b7280; }
+    .info-value { color: #111827; font-weight: 500; }
+    .app-bars { margin-top: 12px; }
+    .app-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .app-bar-label { font-size: 11px; color: #6b7280; width: 50px; }
+    .app-bar-track { flex: 1; height: 6px; background: #f3f4f6; border-radius: 3px; overflow: hidden; }
+    .app-bar-fill { height: 100%; border-radius: 3px; }
+    .app-bar-time { font-size: 11px; color: #374151; width: 40px; text-align: right; }
+    .login-form { display: flex; flex-direction: column; gap: 8px; }
+    .login-form input { padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px; }
+    .login-form button { padding: 8px; background: #1c2b3d; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; }
+    .login-form button:hover { background: #253a52; }
+    .error { color: #ef4444; font-size: 12px; padding: 6px 0; }
+    .footer { padding: 8px 16px; border-top: 1px solid #f3f4f6; }
+    .footer button { width: 100%; padding: 6px; background: none; border: 1px solid #d1d5db; border-radius: 6px; font-size: 12px; color: #6b7280; cursor: pointer; }
+    .footer button:hover { background: #f9fafb; }
+    #login-view, #dashboard-view { display: none; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">B</div>
+    <h1>Breasy WorkOS Tracker</h1>
+  </div>
+
+  <div id="login-view" class="content">
+    <p style="font-size:12px;color:#6b7280;margin-bottom:10px">Sign in with your Breasy WorkOS account</p>
+    <form class="login-form" id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <div id="login-error" class="error" style="display:none"></div>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+
+  <div id="dashboard-view" class="content">
+    <div class="status">
+      <div class="status-dot" id="status-dot"></div>
+      <span class="status-text" id="status-text">Checking...</span>
+    </div>
+
+    <div class="info-row">
+      <span class="info-label">Current App</span>
+      <span class="info-value" id="current-app">—</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Session</span>
+      <span class="info-value" id="session-time">—</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Events Buffered</span>
+      <span class="info-value" id="buffer-count">0</span>
+    </div>
+
+    <div class="app-bars" id="app-bars"></div>
+  </div>
+
+  <div class="footer">
+    <button id="logout-btn" style="display:none">Sign Out</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

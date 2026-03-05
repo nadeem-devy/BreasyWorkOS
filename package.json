@@ -1,0 +1,20 @@
+{
+  "name": "breasy-workos",
+  "private": true,
+  "packageManager": "npm@11.6.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "db:types": "supabase gen types typescript --local > apps/web/src/lib/types/database.ts"
+  },
+  "devDependencies": {
+    "pg": "^8.18.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  }
+}

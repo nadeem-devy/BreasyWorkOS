@@ -1,0 +1,17 @@
+[   32542ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 2236791ms] [ERROR] WebSocket connection to 'wss://zkjihodmoqkxdqgbondi.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpramlob2Rtb3FreGRxZ2JvbmRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1MDY3MDQsImV4cCI6MjA4NzA4MjcwNH0.sx3KcMKz8r4Z_yhZPEZCVEkVtfKhr6-f9K6eyJ2prBU&vsn=2.0.0' failed: Error during WebSocket handshake: net::ERR_CONNECTION_RESET @ http://localhost:3333/_next/static/chunks/node_modules_798b683d._.js:4047
+[ 2250937ms] [ERROR] Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 2790645ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 2850507ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 2910646ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 2970694ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 3060731ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 3390533ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 3450718ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 3600536ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 4320524ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 5460592ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 5940540ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 6000534ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 6210517ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0
+[ 6960444ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://zkjihodmoqkxdqgbondi.supabase.co/rest/v1/v_user_current_status?select=*:0

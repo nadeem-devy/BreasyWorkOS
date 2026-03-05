@@ -1,0 +1,7297 @@
+{
+  "1099": {
+    "bubble_name": "1099",
+    "supabase_table": "b_1099",
+    "records_scanned": 51,
+    "field_count": 7,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "file": {
+        "supabase_column": "file",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "user": {
+        "supabase_column": "user_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "year": {
+        "supabase_column": "year",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "activity": {
+    "bubble_name": "activity",
+    "supabase_table": "b_activity",
+    "records_scanned": 500,
+    "field_count": 12,
+    "fields": {
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "complete": {
+        "supabase_column": "complete",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "body": {
+        "supabase_column": "body",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "activityType": {
+        "supabase_column": "activity_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateCompleted": {
+        "supabase_column": "date_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedFulfillmentOwner": {
+        "supabase_column": "associated_fulfillment_owner",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "jobStage": {
+        "supabase_column": "job_stage",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Title": {
+        "supabase_column": "title",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedJob": {
+        "supabase_column": "associated_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "appsetting": {
+    "bubble_name": "appsetting",
+    "supabase_table": "b_appsetting",
+    "records_scanned": 1,
+    "field_count": 6,
+    "fields": {
+      "smbCsvTemplate": {
+        "supabase_column": "smb_csv_template",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 1
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "custCSVTemplate": {
+        "supabase_column": "cust_csvtemplate",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 1
+      }
+    }
+  },
+  "appusage": {
+    "bubble_name": "appusage",
+    "supabase_table": "b_appusage",
+    "records_scanned": 500,
+    "field_count": 7,
+    "fields": {
+      "user": {
+        "supabase_column": "user_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "type": {
+        "supabase_column": "type_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "page name": {
+        "supabase_column": "page_name",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "backendworkflowlog": {
+    "bubble_name": "backendworkflowlog",
+    "supabase_table": "b_backendworkflowlog",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "blogpost": {
+    "bubble_name": "blogpost",
+    "supabase_table": "b_blogpost",
+    "records_scanned": 59,
+    "field_count": 15,
+    "fields": {
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "saved": {
+        "supabase_column": "saved",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "status": {
+        "supabase_column": "status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "likes": {
+        "supabase_column": "likes",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Description": {
+        "supabase_column": "description",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "timeToRead": {
+        "supabase_column": "time_to_read",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Main Image": {
+        "supabase_column": "main_image",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Body text": {
+        "supabase_column": "body_text",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Title": {
+        "supabase_column": "title",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "category": {
+        "supabase_column": "category",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "market": {
+        "supabase_column": "market",
+        "pg_type": "text",
+        "sample_count": 15
+      },
+      "markets": {
+        "supabase_column": "markets",
+        "pg_type": "text[]",
+        "sample_count": 20
+      }
+    }
+  },
+  "calendarevent": {
+    "bubble_name": "calendarevent",
+    "supabase_table": "b_calendarevent",
+    "records_scanned": 500,
+    "field_count": 12,
+    "fields": {
+      "StartDateTime": {
+        "supabase_column": "start_date_time",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Completed": {
+        "supabase_column": "completed",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "EndDateTime": {
+        "supabase_column": "end_date_time",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "quote": {
+        "supabase_column": "quote",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "fulfillment owner": {
+        "supabase_column": "fulfillment_owner",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Event": {
+        "supabase_column": "event",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "owner": {
+        "supabase_column": "owner",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "call": {
+    "bubble_name": "call",
+    "supabase_table": "b_call",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "chat": {
+    "bubble_name": "chat",
+    "supabase_table": "b_chat",
+    "records_scanned": 161,
+    "field_count": 8,
+    "fields": {
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "messages": {
+        "supabase_column": "messages",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "participants": {
+        "supabase_column": "participants",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "last message": {
+        "supabase_column": "last_message",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smb phone": {
+        "supabase_column": "smb_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "chat-message": {
+    "bubble_name": "chat-message",
+    "supabase_table": "b_chat_message",
+    "records_scanned": 500,
+    "field_count": 11,
+    "fields": {
+      "IsRead": {
+        "supabase_column": "is_read",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "source": {
+        "supabase_column": "source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "content": {
+        "supabase_column": "content",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "chat": {
+        "supabase_column": "chat",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "owner": {
+        "supabase_column": "owner",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "inbound": {
+        "supabase_column": "inbound",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "attachements": {
+        "supabase_column": "attachements",
+        "pg_type": "text[]",
+        "sample_count": 4
+      }
+    }
+  },
+  "chatapp": {
+    "bubble_name": "chatapp",
+    "supabase_table": "b_chatapp",
+    "records_scanned": 500,
+    "field_count": 8,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "active": {
+        "supabase_column": "active",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "users": {
+        "supabase_column": "users",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "messages": {
+        "supabase_column": "messages",
+        "pg_type": "text[]",
+        "sample_count": 20
+      }
+    }
+  },
+  "chatmessages": {
+    "bubble_name": "chatmessages",
+    "supabase_table": "b_chatmessages",
+    "records_scanned": 193,
+    "field_count": 13,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "content": {
+        "supabase_column": "content",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "chat": {
+        "supabase_column": "chat",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "read": {
+        "supabase_column": "read",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "type": {
+        "supabase_column": "type_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "image": {
+        "supabase_column": "image",
+        "pg_type": "text[]",
+        "sample_count": 3
+      },
+      "audio": {
+        "supabase_column": "audio",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "file": {
+        "supabase_column": "file",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "completion button": {
+        "supabase_column": "completion_button",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "quote button": {
+        "supabase_column": "quote_button",
+        "pg_type": "boolean",
+        "sample_count": 20
+      }
+    }
+  },
+  "clicks": {
+    "bubble_name": "clicks",
+    "supabase_table": "b_clicks",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "completion": {
+    "bubble_name": "completion",
+    "supabase_table": "b_completion",
+    "records_scanned": 500,
+    "field_count": 23,
+    "fields": {
+      "added by": {
+        "supabase_column": "added_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "completionDuration": {
+        "supabase_column": "completion_duration",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "completionBeforePhotos": {
+        "supabase_column": "completion_before_photos",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "dateCompleted": {
+        "supabase_column": "date_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "completionSmbName": {
+        "supabase_column": "completion_smb_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "completionRecommendation": {
+        "supabase_column": "completion_recommendation",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "source": {
+        "supabase_column": "source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "[old] completionNextService": {
+        "supabase_column": "[old]_completion_next_service",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "completionAfterPhotos": {
+        "supabase_column": "completion_after_photos",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "completionSummary": {
+        "supabase_column": "completion_summary",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedJob": {
+        "supabase_column": "associated_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "assignedfulfillmentuser": {
+        "supabase_column": "assignedfulfillmentuser",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "completionSmbPhone": {
+        "supabase_column": "completion_smb_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedSmbUser": {
+        "supabase_column": "associated_smb_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "[old] fulfillmentApproved": {
+        "supabase_column": "[old]_fulfillment_approved",
+        "pg_type": "boolean",
+        "sample_count": 3
+      },
+      "dateFulfillmentApproved": {
+        "supabase_column": "date_fulfillment_approved",
+        "pg_type": "timestamptz",
+        "sample_count": 3
+      },
+      "isAccepted": {
+        "supabase_column": "is_accepted",
+        "pg_type": "boolean",
+        "sample_count": 3
+      },
+      "[old] fulfillmentApprovedBy": {
+        "supabase_column": "[old]_fulfillment_approved_by",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "markup": {
+        "supabase_column": "markup",
+        "pg_type": "numeric",
+        "sample_count": 1
+      }
+    }
+  },
+  "conversation": {
+    "bubble_name": "conversation",
+    "supabase_table": "b_conversation",
+    "records_scanned": 500,
+    "field_count": 16,
+    "fields": {
+      "associatedInternalUser": {
+        "supabase_column": "associated_internal_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "messages": {
+        "supabase_column": "messages",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "unread": {
+        "supabase_column": "unread",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "associatedMarkets": {
+        "supabase_column": "associated_markets",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "jobAddress": {
+        "supabase_column": "job_address",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "smb": {
+        "supabase_column": "smb",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedExternalUser": {
+        "supabase_column": "associated_external_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "externalPhoneNo": {
+        "supabase_column": "external_phone_no",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "relatedMessagesAssignedWOs": {
+        "supabase_column": "related_messages_assigned_wos",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "jobWorkOrder": {
+        "supabase_column": "job_work_order",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "relatedConversationJob": {
+        "supabase_column": "related_conversation_job",
+        "pg_type": "text[]",
+        "sample_count": 3
+      }
+    }
+  },
+  "custcontactintent": {
+    "bubble_name": "custcontactintent",
+    "supabase_table": "b_custcontactintent",
+    "records_scanned": 79,
+    "field_count": 13,
+    "fields": {
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "erroroncreate": {
+        "supabase_column": "erroroncreate",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "email": {
+        "supabase_column": "email",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "contactCreated": {
+        "supabase_column": "contact_created",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "firstName": {
+        "supabase_column": "first_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobTitle": {
+        "supabase_column": "job_title",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "lastName": {
+        "supabase_column": "last_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "phone": {
+        "supabase_column": "phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "org": {
+        "supabase_column": "org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedContact": {
+        "supabase_column": "associated_contact",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "customercontact": {
+    "bubble_name": "customercontact",
+    "supabase_table": "b_customercontact",
+    "records_scanned": 1,
+    "field_count": 7,
+    "fields": {
+      "full name": {
+        "supabase_column": "full_name",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 1
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "email": {
+        "supabase_column": "email",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "phone number": {
+        "supabase_column": "phone_number",
+        "pg_type": "integer",
+        "sample_count": 1
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 1
+      }
+    }
+  },
+  "customerscorecard": {
+    "bubble_name": "customerscorecard",
+    "supabase_table": "b_customerscorecard",
+    "records_scanned": 500,
+    "field_count": 8,
+    "fields": {
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "jobCreatedDate": {
+        "supabase_column": "job_created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "jobstage": {
+        "supabase_column": "jobstage",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "customerOrg": {
+        "supabase_column": "customer_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "duplicatedinvoices": {
+    "bubble_name": "duplicatedinvoices",
+    "supabase_table": "b_duplicatedinvoices",
+    "records_scanned": 500,
+    "field_count": 12,
+    "fields": {
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "workOrder": {
+        "supabase_column": "work_order",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "invoiceStatus": {
+        "supabase_column": "invoice_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "invoiceType": {
+        "supabase_column": "invoice_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "relatedJob": {
+        "supabase_column": "related_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "invoiceCreatedDate": {
+        "supabase_column": "invoice_created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "totalAmountSMB": {
+        "supabase_column": "total_amount_smb",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "invoiceNumber": {
+        "supabase_column": "invoice_number",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "totalAmountCustomer": {
+        "supabase_column": "total_amount_customer",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "duplicateinvoicerf": {
+    "bubble_name": "duplicateinvoicerf",
+    "supabase_table": "b_duplicateinvoicerf",
+    "records_scanned": 500,
+    "field_count": 23,
+    "fields": {
+      "invoiceStatus": {
+        "supabase_column": "invoice_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbAddressCity": {
+        "supabase_column": "smb_address_city",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateJobCompleted": {
+        "supabase_column": "date_job_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "invoiceJob": {
+        "supabase_column": "invoice_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateSentToAP": {
+        "supabase_column": "date_sent_to_ap",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "invoiceType": {
+        "supabase_column": "invoice_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbAddressState": {
+        "supabase_column": "smb_address_state",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "jobWorkOrder": {
+        "supabase_column": "job_work_order",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbAddressZipcode": {
+        "supabase_column": "smb_address_zipcode",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbAddressStreet": {
+        "supabase_column": "smb_address_street",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbPhone": {
+        "supabase_column": "smb_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "amountSmbPayout": {
+        "supabase_column": "amount_smb_payout",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "associatedSmb": {
+        "supabase_column": "associated_smb",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateJobCompletionConfirmed": {
+        "supabase_column": "date_job_completion_confirmed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "smbName": {
+        "supabase_column": "smb_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "invoiceQuote": {
+        "supabase_column": "invoice_quote",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedCustOrg": {
+        "supabase_column": "associated_cust_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "invoiceNumber": {
+        "supabase_column": "invoice_number",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "amountCustPrice": {
+        "supabase_column": "amount_cust_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "dateCustInvoiceDue": {
+        "supabase_column": "date_cust_invoice_due",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "duplicatejob": {
+    "bubble_name": "duplicatejob",
+    "supabase_table": "b_duplicatejob",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "duplicatejobservice": {
+    "bubble_name": "duplicatejobservice",
+    "supabase_table": "b_duplicatejobservice",
+    "records_scanned": 500,
+    "field_count": 14,
+    "fields": {
+      "serviceSmbHours": {
+        "supabase_column": "service_smb_hours",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "serviceSuggestedRate": {
+        "supabase_column": "service_suggested_rate",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "markup": {
+        "supabase_column": "markup",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "customerPrice": {
+        "supabase_column": "customer_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "serviceMarket": {
+        "supabase_column": "service_market",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbTotalCost": {
+        "supabase_column": "smb_total_cost",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "serviceSuggestedHours": {
+        "supabase_column": "service_suggested_hours",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "serviceJob": {
+        "supabase_column": "service_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "serviceSmbRate": {
+        "supabase_column": "service_smb_rate",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "serviceType": {
+        "supabase_column": "service_type",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "duplicatenextstep": {
+    "bubble_name": "duplicatenextstep",
+    "supabase_table": "b_duplicatenextstep",
+    "records_scanned": 500,
+    "field_count": 14,
+    "fields": {
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "taskJobStage": {
+        "supabase_column": "task_job_stage",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "nextStepDetails": {
+        "supabase_column": "next_step_details",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dueDateText": {
+        "supabase_column": "due_date_text",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "blocked": {
+        "supabase_column": "blocked",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "taskStatus": {
+        "supabase_column": "task_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobWorkorder": {
+        "supabase_column": "job_workorder",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "dateDue": {
+        "supabase_column": "date_due",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedJob": {
+        "supabase_column": "associated_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedFulfillmentUser": {
+        "supabase_column": "associated_fulfillment_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "nextStepType": {
+        "supabase_column": "next_step_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateCompleted": {
+        "supabase_column": "date_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "duplicatequote": {
+    "bubble_name": "duplicatequote",
+    "supabase_table": "b_duplicatequote",
+    "records_scanned": 500,
+    "field_count": 20,
+    "fields": {
+      "quoteScopeOfWork": {
+        "supabase_column": "quote_scope_of_work",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "quoteAdditionalRecommendations": {
+        "supabase_column": "quote_additional_recommendations",
+        "pg_type": "text",
+        "sample_count": 13
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "amountCostOfMaterials": {
+        "supabase_column": "amount_cost_of_materials",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "quoteSmbPhone": {
+        "supabase_column": "quote_smb_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedSmbUser": {
+        "supabase_column": "associated_smb_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "quoteSmbName": {
+        "supabase_column": "quote_smb_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "amountCustomerMarkup": {
+        "supabase_column": "amount_customer_markup",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "associatedSmbOrg": {
+        "supabase_column": "associated_smb_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "status": {
+        "supabase_column": "status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "onsiteNote": {
+        "supabase_column": "onsite_note",
+        "pg_type": "text",
+        "sample_count": 11
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "quoteExpectedTimeToCompletion": {
+        "supabase_column": "quote_expected_time_to_completion",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "amountCustomerCalculation": {
+        "supabase_column": "amount_customer_calculation",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "amountCustomerTotal": {
+        "supabase_column": "amount_customer_total",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "amountSmbLabor": {
+        "supabase_column": "amount_smb_labor",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "dateSmbSubmitted": {
+        "supabase_column": "date_smb_submitted",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "onsitePhotos": {
+        "supabase_column": "onsite_photos",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "amountSmbTotal": {
+        "supabase_column": "amount_smb_total",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "dynamicsmbtablecache": {
+    "bubble_name": "dynamicsmbtablecache",
+    "supabase_table": "b_dynamicsmbtablecache",
+    "records_scanned": 500,
+    "field_count": 6,
+    "fields": {
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "n8n_query_count": {
+        "supabase_column": "n8n_query_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "cache": {
+        "supabase_column": "cache",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "email": {
+    "bubble_name": "email",
+    "supabase_table": "b_email",
+    "records_scanned": 500,
+    "field_count": 21,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "receiverEmail": {
+        "supabase_column": "receiver_email",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "senderName": {
+        "supabase_column": "sender_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "isRead": {
+        "supabase_column": "is_read",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "messageID": {
+        "supabase_column": "message_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "slackNotificationSent": {
+        "supabase_column": "slack_notification_sent",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "senderEmail": {
+        "supabase_column": "sender_email",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "emailType": {
+        "supabase_column": "email_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "isStarred": {
+        "supabase_column": "is_starred",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "emailSubject": {
+        "supabase_column": "email_subject",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "readBy": {
+        "supabase_column": "read_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "emailBody": {
+        "supabase_column": "email_body",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "relatedFulfillmentOwner": {
+        "supabase_column": "related_fulfillment_owner",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobWorkOrder": {
+        "supabase_column": "job_work_order",
+        "pg_type": "text",
+        "sample_count": 6
+      },
+      "Receiver": {
+        "supabase_column": "receiver",
+        "pg_type": "text",
+        "sample_count": 16
+      },
+      "Sender": {
+        "supabase_column": "sender",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "receiverName": {
+        "supabase_column": "receiver_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "emailFileAttachments": {
+        "supabase_column": "email_file_attachments",
+        "pg_type": "text[]",
+        "sample_count": 1
+      }
+    }
+  },
+  "feedback": {
+    "bubble_name": "feedback",
+    "supabase_table": "b_feedback",
+    "records_scanned": 6,
+    "field_count": 7,
+    "fields": {
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 6
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 6
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 6
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 6
+      },
+      "description": {
+        "supabase_column": "description",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "job-workorder": {
+        "supabase_column": "job_workorder",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "type": {
+        "supabase_column": "type_val",
+        "pg_type": "text",
+        "sample_count": 1
+      }
+    }
+  },
+  "feedback-fa": {
+    "bubble_name": "feedback-fa",
+    "supabase_table": "b_feedback_fa",
+    "records_scanned": 45,
+    "field_count": 13,
+    "fields": {
+      "Platform area": {
+        "supabase_column": "platform_area",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "user": {
+        "supabase_column": "user_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Expected behavior ": {
+        "supabase_column": "expected_behavior",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Description": {
+        "supabase_column": "description",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Title": {
+        "supabase_column": "title",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Priority": {
+        "supabase_column": "priority",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "what caused the issue": {
+        "supabase_column": "what_caused_the_issue",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "id": {
+        "supabase_column": "id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Issue type": {
+        "supabase_column": "issue_type",
+        "pg_type": "text",
+        "sample_count": 7
+      }
+    }
+  },
+  "foactivitystats": {
+    "bubble_name": "foactivitystats",
+    "supabase_table": "b_foactivitystats",
+    "records_scanned": 45,
+    "field_count": 16,
+    "fields": {
+      "custSMS": {
+        "supabase_column": "cust_sms",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "portalUpdate": {
+        "supabase_column": "portal_update",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "fulfillmentName": {
+        "supabase_column": "fulfillment_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "tenantSMS": {
+        "supabase_column": "tenant_sms",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbEmail": {
+        "supabase_column": "smb_email",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "custEmail": {
+        "supabase_column": "cust_email",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "custCall": {
+        "supabase_column": "cust_call",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "relatedUser": {
+        "supabase_column": "related_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbSMS": {
+        "supabase_column": "smb_sms",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "tenantCall": {
+        "supabase_column": "tenant_call",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "smbCall": {
+        "supabase_column": "smb_call",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Others": {
+        "supabase_column": "others",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "formsviewmorejobscount": {
+    "bubble_name": "formsviewmorejobscount",
+    "supabase_table": "b_formsviewmorejobscount",
+    "records_scanned": 323,
+    "field_count": 6,
+    "fields": {
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "user": {
+        "supabase_column": "user_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "fulfillmentanalytics": {
+    "bubble_name": "fulfillmentanalytics",
+    "supabase_table": "b_fulfillmentanalytics",
+    "records_scanned": 25,
+    "field_count": 14,
+    "fields": {
+      "Completion%": {
+        "supabase_column": "completion%",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "closedWonRevenue%": {
+        "supabase_column": "closed_won_revenue%",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbQuoteAmount": {
+        "supabase_column": "smb_quote_amount",
+        "pg_type": "numeric",
+        "sample_count": 15
+      },
+      "fulfillmentOwner": {
+        "supabase_column": "fulfillment_owner",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Date": {
+        "supabase_column": "date_val",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "wonRevenue": {
+        "supabase_column": "won_revenue",
+        "pg_type": "numeric",
+        "sample_count": 14
+      },
+      "breasyProfit": {
+        "supabase_column": "breasy_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "closedWon": {
+        "supabase_column": "closed_won",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "closedLost": {
+        "supabase_column": "closed_lost",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "lostRevenue": {
+        "supabase_column": "lost_revenue",
+        "pg_type": "numeric",
+        "sample_count": 15
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "holdsmbcsv": {
+    "bubble_name": "holdsmbcsv",
+    "supabase_table": "b_holdsmbcsv",
+    "records_scanned": 2,
+    "field_count": 15,
+    "fields": {
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "Organization Name": {
+        "supabase_column": "organization_name",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 2
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 2
+      },
+      "Vendor Portal URL": {
+        "supabase_column": "vendor_portal_url",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Zip": {
+        "supabase_column": "zip",
+        "pg_type": "integer",
+        "sample_count": 1
+      },
+      "Street": {
+        "supabase_column": "street",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "City": {
+        "supabase_column": "city",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Hubspot URL": {
+        "supabase_column": "hubspot_url",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Hubspot ID": {
+        "supabase_column": "hubspot_id",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Website": {
+        "supabase_column": "website",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Organization Bio": {
+        "supabase_column": "organization_bio",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "State": {
+        "supabase_column": "state",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "EIN": {
+        "supabase_column": "ein",
+        "pg_type": "text",
+        "sample_count": 1
+      }
+    }
+  },
+  "invoice": {
+    "bubble_name": "invoice",
+    "supabase_table": "b_invoice",
+    "records_scanned": 500,
+    "field_count": 17,
+    "fields": {
+      "invoiceType": {
+        "supabase_column": "invoice_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateJobCompleted": {
+        "supabase_column": "date_job_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "smbPhone": {
+        "supabase_column": "smb_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateJobCompletionConfirmed": {
+        "supabase_column": "date_job_completion_confirmed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "jobWorkOrder": {
+        "supabase_column": "job_work_order",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedCustOrg": {
+        "supabase_column": "associated_cust_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "invoiceStatus": {
+        "supabase_column": "invoice_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "invoiceJob": {
+        "supabase_column": "invoice_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbName": {
+        "supabase_column": "smb_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "invoiceNumber": {
+        "supabase_column": "invoice_number",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateDue": {
+        "supabase_column": "date_due",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "amountSmbPrice": {
+        "supabase_column": "amount_smb_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "amountCustPrice": {
+        "supabase_column": "amount_cust_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "job": {
+    "bubble_name": "job",
+    "supabase_table": "b_job",
+    "records_scanned": 500,
+    "field_count": 65,
+    "fields": {
+      "timeToQuote": {
+        "supabase_column": "time_to_quote",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "statusSmbQuote": {
+        "supabase_column": "status_smb_quote",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateCustInvoiceDue": {
+        "supabase_column": "date_cust_invoice_due",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "occupiedFirst": {
+        "supabase_column": "occupied_first",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "statusJobCompletion": {
+        "supabase_column": "status_job_completion",
+        "pg_type": "text",
+        "sample_count": 15
+      },
+      "acceptedQuote": {
+        "supabase_column": "accepted_quote",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "assignedCustOrg": {
+        "supabase_column": "assigned_cust_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateCustInvoiceSent": {
+        "supabase_column": "date_cust_invoice_sent",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "dateFulfillmentConfirmedCompletion": {
+        "supabase_column": "date_fulfillment_confirmed_completion",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "dateClosedTxt": {
+        "supabase_column": "date_closed_txt",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobMarket": {
+        "supabase_column": "job_market",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbPaymentStatusZapier": {
+        "supabase_column": "smb_payment_status_zapier",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "lastActivity": {
+        "supabase_column": "last_activity",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "assignedSmbUser": {
+        "supabase_column": "assigned_smb_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateWorkScheduledTxt": {
+        "supabase_column": "date_work_scheduled_txt",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "occupiedLast": {
+        "supabase_column": "occupied_last",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "assignedFulfillmentUser": {
+        "supabase_column": "assigned_fulfillment_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "activeNextStep": {
+        "supabase_column": "active_next_step",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateCustQuoteSent": {
+        "supabase_column": "date_cust_quote_sent",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "jobWorkOrder": {
+        "supabase_column": "job_work_order",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "statusCustQuote": {
+        "supabase_column": "status_cust_quote",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobInvoiceNo": {
+        "supabase_column": "job_invoice_no",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedCustInvoice": {
+        "supabase_column": "associated_cust_invoice",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateSmbQuoteRecieved": {
+        "supabase_column": "date_smb_quote_recieved",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "jobDescription": {
+        "supabase_column": "job_description",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "statusJobStage": {
+        "supabase_column": "status_job_stage",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "hubspotDealId": {
+        "supabase_column": "hubspot_deal_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "acceptedCompletion": {
+        "supabase_column": "accepted_completion",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedActivities(updated)": {
+        "supabase_column": "associated_activitiesupdated",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "dateClosed": {
+        "supabase_column": "date_closed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "dateWorkCompleted": {
+        "supabase_column": "date_work_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "amountCustPrice": {
+        "supabase_column": "amount_cust_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "associatedSmbPayment": {
+        "supabase_column": "associated_smb_payment",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedQuotes": {
+        "supabase_column": "associated_quotes",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "invoiceSmbInvoice": {
+        "supabase_column": "invoice_smb_invoice",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateWorkScheduled": {
+        "supabase_column": "date_work_scheduled",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "jobCustPhotos": {
+        "supabase_column": "job_cust_photos",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "assignedCustUser": {
+        "supabase_column": "assigned_cust_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateSmbSentToAP": {
+        "supabase_column": "date_smb_sent_to_ap",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedNextSteps": {
+        "supabase_column": "associated_next_steps",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "addressGeo": {
+        "supabase_column": "address_geo",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "jobServicesList": {
+        "supabase_column": "job_services_list",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "activeactivity(updated)": {
+        "supabase_column": "activeactivityupdated",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "statusCustInvoice": {
+        "supabase_column": "status_cust_invoice",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "occupiedPhone": {
+        "supabase_column": "occupied_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "blocked": {
+        "supabase_column": "blocked",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "hubspotDealClosed": {
+        "supabase_column": "hubspot_deal_closed",
+        "pg_type": "boolean",
+        "sample_count": 17
+      },
+      "hubspotDealIdInserted": {
+        "supabase_column": "hubspot_deal_id_inserted",
+        "pg_type": "boolean",
+        "sample_count": 17
+      },
+      "amountSmbPrice": {
+        "supabase_column": "amount_smb_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "amountMarkup": {
+        "supabase_column": "amount_markup",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "dateSmbConfirmedPaid": {
+        "supabase_column": "date_smb_confirmed_paid",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "amountCostOfMaterials": {
+        "supabase_column": "amount_cost_of_materials",
+        "pg_type": "integer",
+        "sample_count": 1
+      },
+      "quoteCustScopeOfWork": {
+        "supabase_column": "quote_cust_scope_of_work",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "quoteSmbScopeOfWork": {
+        "supabase_column": "quote_smb_scope_of_work",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "occupiedNote": {
+        "supabase_column": "occupied_note",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "closedReason": {
+        "supabase_column": "closed_reason",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "closedDetails": {
+        "supabase_column": "closed_details",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "published SMBs": {
+        "supabase_column": "published_smbs",
+        "pg_type": "text[]",
+        "sample_count": 1
+      },
+      "dateQuoteScheduledTxt": {
+        "supabase_column": "date_quote_scheduled_txt",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "dateQuoteScheduled": {
+        "supabase_column": "date_quote_scheduled",
+        "pg_type": "timestamptz",
+        "sample_count": 1
+      },
+      "jobID": {
+        "supabase_column": "job_id",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "jobrequest": {
+    "bubble_name": "jobrequest",
+    "supabase_table": "b_jobrequest",
+    "records_scanned": 40,
+    "field_count": 22,
+    "fields": {
+      "endPage": {
+        "supabase_column": "end_page",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "market": {
+        "supabase_column": "market",
+        "pg_type": "text",
+        "sample_count": 7
+      },
+      "email": {
+        "supabase_column": "email",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "services": {
+        "supabase_column": "services",
+        "pg_type": "text[]",
+        "sample_count": 4
+      },
+      "optIn": {
+        "supabase_column": "opt_in",
+        "pg_type": "boolean",
+        "sample_count": 3
+      },
+      "contactName": {
+        "supabase_column": "contact_name",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "address": {
+        "supabase_column": "address",
+        "pg_type": "jsonb",
+        "sample_count": 7
+      },
+      "additionalDetails": {
+        "supabase_column": "additional_details",
+        "pg_type": "text",
+        "sample_count": 4
+      },
+      "phone": {
+        "supabase_column": "phone",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "budget": {
+        "supabase_column": "budget",
+        "pg_type": "integer",
+        "sample_count": 2
+      },
+      "superServices": {
+        "supabase_column": "super_services",
+        "pg_type": "text[]",
+        "sample_count": 3
+      },
+      "highEstimatePrice": {
+        "supabase_column": "high_estimate_price",
+        "pg_type": "integer",
+        "sample_count": 2
+      },
+      "highEstimateReason": {
+        "supabase_column": "high_estimate_reason",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "recurring": {
+        "supabase_column": "recurring",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "lowEstimateReason": {
+        "supabase_column": "low_estimate_reason",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "role": {
+        "supabase_column": "role",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "urgency": {
+        "supabase_column": "urgency",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "lowEstimatePrice": {
+        "supabase_column": "low_estimate_price",
+        "pg_type": "integer",
+        "sample_count": 2
+      }
+    }
+  },
+  "jobrequestqualitymetrics": {
+    "bubble_name": "jobrequestqualitymetrics",
+    "supabase_table": "b_jobrequestqualitymetrics",
+    "records_scanned": 500,
+    "field_count": 15,
+    "fields": {
+      "n8n_description_rating": {
+        "supabase_column": "n8n_description_rating",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smb_distances": {
+        "supabase_column": "smb_distances",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "warning_pmc_compl_below_50": {
+        "supabase_column": "warning_pmc_compl_below_50",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "warning_no_smbs_in_range_30mi": {
+        "supabase_column": "warning_no_smbs_in_range_30mi",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "eligible_smbs": {
+        "supabase_column": "eligible_smbs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "site_images_missing": {
+        "supabase_column": "site_images_missing",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "budget_missing": {
+        "supabase_column": "budget_missing",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "smb_compl_%s": {
+        "supabase_column": "smb_compl_%s",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "warning_no_smbs_with_80%": {
+        "supabase_column": "warning_no_smbs_with_80%",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "pmc_jobs_to_date": {
+        "supabase_column": "pmc_jobs_to_date",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "pmc_compl_%": {
+        "supabase_column": "pmc_compl_%",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "jobservice": {
+    "bubble_name": "jobservice",
+    "supabase_table": "b_jobservice",
+    "records_scanned": 500,
+    "field_count": 15,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "serviceMarket": {
+        "supabase_column": "service_market",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "serviceJob": {
+        "supabase_column": "service_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobWorkOrder": {
+        "supabase_column": "job_work_order",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbTotalCost": {
+        "supabase_column": "smb_total_cost",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "serviceSmbHours": {
+        "supabase_column": "service_smb_hours",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "serviceSmbRate": {
+        "supabase_column": "service_smb_rate",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "markup": {
+        "supabase_column": "markup",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "customerPrice": {
+        "supabase_column": "customer_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "serviceSuggestedRate": {
+        "supabase_column": "service_suggested_rate",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "serviceSuggestedHours": {
+        "supabase_column": "service_suggested_hours",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "serviceType": {
+        "supabase_column": "service_type",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "landingpagereview": {
+    "bubble_name": "landingpagereview",
+    "supabase_table": "b_landingpagereview",
+    "records_scanned": 21,
+    "field_count": 7,
+    "fields": {
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "content": {
+        "supabase_column": "content",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "user": {
+        "supabase_column": "user_val",
+        "pg_type": "text",
+        "sample_count": 13
+      },
+      "job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 13
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 5
+      }
+    }
+  },
+  "landingpageteam": {
+    "bubble_name": "landingpageteam",
+    "supabase_table": "b_landingpageteam",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "leads": {
+    "bubble_name": "leads",
+    "supabase_table": "b_leads",
+    "records_scanned": 5,
+    "field_count": 8,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 2
+      },
+      "message": {
+        "supabase_column": "message",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      },
+      "email": {
+        "supabase_column": "email",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "name": {
+        "supabase_column": "name",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "phone": {
+        "supabase_column": "phone",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      }
+    }
+  },
+  "managertask": {
+    "bubble_name": "managertask",
+    "supabase_table": "b_managertask",
+    "records_scanned": 500,
+    "field_count": 11,
+    "fields": {
+      "stage": {
+        "supabase_column": "stage",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "workorder": {
+        "supabase_column": "workorder",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "reviewed": {
+        "supabase_column": "reviewed",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "issue": {
+        "supabase_column": "issue",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedjob": {
+        "supabase_column": "associatedjob",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Description ": {
+        "supabase_column": "description",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "notify": {
+        "supabase_column": "notify",
+        "pg_type": "text[]",
+        "sample_count": 1
+      }
+    }
+  },
+  "mapboxdynamicsmbtablecache": {
+    "bubble_name": "mapboxdynamicsmbtablecache",
+    "supabase_table": "b_mapboxdynamicsmbtablecache",
+    "records_scanned": 500,
+    "field_count": 6,
+    "fields": {
+      "n8n_query_count": {
+        "supabase_column": "n8n_query_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mbcache": {
+        "supabase_column": "mbcache",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "marketingfaq": {
+    "bubble_name": "marketingfaq",
+    "supabase_table": "b_marketingfaq",
+    "records_scanned": 8,
+    "field_count": 8,
+    "fields": {
+      "active": {
+        "supabase_column": "active",
+        "pg_type": "boolean",
+        "sample_count": 8
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "Answer": {
+        "supabase_column": "answer",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "Question": {
+        "supabase_column": "question",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "audience": {
+        "supabase_column": "audience",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 8
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 8
+      }
+    }
+  },
+  "marketingtestimonial": {
+    "bubble_name": "marketingtestimonial",
+    "supabase_table": "b_marketingtestimonial",
+    "records_scanned": 7,
+    "field_count": 9,
+    "fields": {
+      "display name": {
+        "supabase_column": "display_name",
+        "pg_type": "text",
+        "sample_count": 6
+      },
+      "market": {
+        "supabase_column": "market",
+        "pg_type": "text",
+        "sample_count": 4
+      },
+      "active": {
+        "supabase_column": "active",
+        "pg_type": "boolean",
+        "sample_count": 7
+      },
+      "text": {
+        "supabase_column": "text",
+        "pg_type": "text",
+        "sample_count": 7
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 7
+      },
+      "audience": {
+        "supabase_column": "audience",
+        "pg_type": "text",
+        "sample_count": 7
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 7
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 7
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 7
+      }
+    }
+  },
+  "markettwins(lut)": {
+    "bubble_name": "markettwins(lut)",
+    "supabase_table": "b_markettwinslut",
+    "records_scanned": 37,
+    "field_count": 6,
+    "fields": {
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "address": {
+        "supabase_column": "address",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "linked_option": {
+        "supabase_column": "linked_option",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "message": {
+    "bubble_name": "message",
+    "supabase_table": "b_message",
+    "records_scanned": 500,
+    "field_count": 11,
+    "fields": {
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "content": {
+        "supabase_column": "content",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "messageNote": {
+        "supabase_column": "message_note",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "relatedNote": {
+        "supabase_column": "related_note",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "messageDate": {
+        "supabase_column": "message_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "direction": {
+        "supabase_column": "direction",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "sender": {
+        "supabase_column": "sender",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "fromPhone": {
+        "supabase_column": "from_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "monthgoalsbreasy": {
+    "bubble_name": "monthgoalsbreasy",
+    "supabase_table": "b_monthgoalsbreasy",
+    "records_scanned": 5,
+    "field_count": 6,
+    "fields": {
+      "gp_goal": {
+        "supabase_column": "gp_goal",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "associated_date--roundToMonthUSMountainPlus12Hours": {
+        "supabase_column": "associated_date_round_to_month_usmountain_plus12_hours",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      }
+    }
+  },
+  "monthgoalsmarket": {
+    "bubble_name": "monthgoalsmarket",
+    "supabase_table": "b_monthgoalsmarket",
+    "records_scanned": 101,
+    "field_count": 8,
+    "fields": {
+      "associated_date--roundToMonthUSMountainPlus12Hours": {
+        "supabase_column": "associated_date_round_to_month_usmountain_plus12_hours",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "gp_goal": {
+        "supabase_column": "gp_goal",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "market_name--forSorting": {
+        "supabase_column": "market_name_for_sorting",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associated_market": {
+        "supabase_column": "associated_market",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "monthgoalsmm": {
+    "bubble_name": "monthgoalsmm",
+    "supabase_table": "b_monthgoalsmm",
+    "records_scanned": 52,
+    "field_count": 8,
+    "fields": {
+      "gp_goal": {
+        "supabase_column": "gp_goal",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "mm_first_name--forSorting": {
+        "supabase_column": "mm_first_name_for_sorting",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associated_date--roundToMonthUSMountainPlus12Hours": {
+        "supabase_column": "associated_date_round_to_month_usmountain_plus12_hours",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associated_mm": {
+        "supabase_column": "associated_mm",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "nextstep": {
+    "bubble_name": "nextstep",
+    "supabase_table": "b_nextstep",
+    "records_scanned": 500,
+    "field_count": 14,
+    "fields": {
+      "dueDateText": {
+        "supabase_column": "due_date_text",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "taskStatus": {
+        "supabase_column": "task_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateDue": {
+        "supabase_column": "date_due",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "blocked": {
+        "supabase_column": "blocked",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "associatedJob": {
+        "supabase_column": "associated_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "nextStepDetails": {
+        "supabase_column": "next_step_details",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "taskJobStage": {
+        "supabase_column": "task_job_stage",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "nextStepType": {
+        "supabase_column": "next_step_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedFulfillmentUser": {
+        "supabase_column": "associated_fulfillment_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateCompleted": {
+        "supabase_column": "date_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "nextstepsmb": {
+    "bubble_name": "nextstepsmb",
+    "supabase_table": "b_nextstepsmb",
+    "records_scanned": 500,
+    "field_count": 14,
+    "fields": {
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "taskStatus": {
+        "supabase_column": "task_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "taskManager": {
+        "supabase_column": "task_manager",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateDue": {
+        "supabase_column": "date_due",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedFulfillmentUser": {
+        "supabase_column": "associated_fulfillment_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dueDateText": {
+        "supabase_column": "due_date_text",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "nextStepDetails": {
+        "supabase_column": "next_step_details",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateCompleted": {
+        "supabase_column": "date_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "relatedOrganization": {
+        "supabase_column": "related_organization",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "blocked": {
+        "supabase_column": "blocked",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "nextStepType": {
+        "supabase_column": "next_step_type",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "note": {
+    "bubble_name": "note",
+    "supabase_table": "b_note",
+    "records_scanned": 500,
+    "field_count": 9,
+    "fields": {
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "body": {
+        "supabase_column": "body",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "noteType": {
+        "supabase_column": "note_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedjob": {
+        "supabase_column": "associatedjob",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedOrg": {
+        "supabase_column": "associated_org",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "file": {
+        "supabase_column": "file",
+        "pg_type": "text[]",
+        "sample_count": 20
+      }
+    }
+  },
+  "notification-joy": {
+    "bubble_name": "notification-joy",
+    "supabase_table": "b_notification_joy",
+    "records_scanned": 500,
+    "field_count": 10,
+    "fields": {
+      "users": {
+        "supabase_column": "users",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "completed": {
+        "supabase_column": "completed",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "type": {
+        "supabase_column": "type_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "MM": {
+        "supabase_column": "mm",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "message": {
+        "supabase_column": "message",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "notifications": {
+    "bubble_name": "notifications",
+    "supabase_table": "b_notifications",
+    "records_scanned": 500,
+    "field_count": 12,
+    "fields": {
+      "Type": {
+        "supabase_column": "type_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "relatedMessage": {
+        "supabase_column": "related_message",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Read": {
+        "supabase_column": "read",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Content": {
+        "supabase_column": "content",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Sender": {
+        "supabase_column": "sender",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Receiver": {
+        "supabase_column": "receiver",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "relatedJob": {
+        "supabase_column": "related_job",
+        "pg_type": "text",
+        "sample_count": 15
+      },
+      "relatedEmail": {
+        "supabase_column": "related_email",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "organization": {
+    "bubble_name": "organization",
+    "supabase_table": "b_organization",
+    "records_scanned": 500,
+    "field_count": 93,
+    "fields": {
+      "smbTierpointComplPerc": {
+        "supabase_column": "smb_tierpoint_compl_perc",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "READONLY_daysSinceComplete": {
+        "supabase_column": "readonly_days_since_complete",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbPaymentClosedLost": {
+        "supabase_column": "smb_payment_closed_lost",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "orgFunction": {
+        "supabase_column": "org_function",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbTierpointComplCount": {
+        "supabase_column": "smb_tierpoint_compl_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "noteSmbPreferences": {
+        "supabase_column": "note_smb_preferences",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbSource": {
+        "supabase_column": "smb_source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "metricWoCountAllClosed": {
+        "supabase_column": "metric_wo_count_all_closed",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "dateLastPublished": {
+        "supabase_column": "date_last_published",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "smbApprovedForWork": {
+        "supabase_column": "smb_approved_for_work",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "READONLY_daysSinceCW": {
+        "supabase_column": "readonly_days_since_cw",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbTierpointCwRevPerc": {
+        "supabase_column": "smb_tierpoint_cw_rev_perc",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "dateLastSentOrAssigned": {
+        "supabase_column": "date_last_sent_or_assigned",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "metricCwRevPerc": {
+        "supabase_column": "metric_cw_rev_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "custTier": {
+        "supabase_column": "cust_tier",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbTierpointSmbPayment": {
+        "supabase_column": "smb_tierpoint_smb_payment",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "lifecycleStagePrev": {
+        "supabase_column": "lifecycle_stage_prev",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "metricComplPerc": {
+        "supabase_column": "metric_compl_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "metricPaymentCount": {
+        "supabase_column": "metric_payment_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "orgAddedVia": {
+        "supabase_column": "org_added_via",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "orgAddressGeo": {
+        "supabase_column": "org_address_geo",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "smbPaymentClosedWon": {
+        "supabase_column": "smb_payment_closed_won",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "READONLY_daysSincePublished": {
+        "supabase_column": "readonly_days_since_published",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbEIN": {
+        "supabase_column": "smb_ein",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "orgName": {
+        "supabase_column": "org_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbServices": {
+        "supabase_column": "smb_services",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "mercuryStatus": {
+        "supabase_column": "mercury_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "metricWoCountClosedWon": {
+        "supabase_column": "metric_wo_count_closed_won",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbPaymentAllClosed": {
+        "supabase_column": "smb_payment_all_closed",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "smbTierpointTotal": {
+        "supabase_column": "smb_tierpoint_total",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "orgMarkets": {
+        "supabase_column": "org_markets",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "metricWoCountClosedLost": {
+        "supabase_column": "metric_wo_count_closed_lost",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "noteFulfillment": {
+        "supabase_column": "note_fulfillment",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "READONLY_daysSinceSentOrAssigned": {
+        "supabase_column": "readonly_days_since_sent_or_assigned",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "orgHubspotID": {
+        "supabase_column": "org_hubspot_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateLastComplete": {
+        "supabase_column": "date_last_complete",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "lifecycleStage": {
+        "supabase_column": "lifecycle_stage",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedUsers": {
+        "supabase_column": "associated_users",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "metricWoCreatedAllTime": {
+        "supabase_column": "metric_wo_created_all_time",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedPrimaryContact": {
+        "supabase_column": "associated_primary_contact",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateLastCW": {
+        "supabase_column": "date_last_cw",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "orgTier": {
+        "supabase_column": "org_tier",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "metricTotalWoMatched": {
+        "supabase_column": "metric_total_wo_matched",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "custApPaymentTerms": {
+        "supabase_column": "cust_ap_payment_terms",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "custPropertyTypes": {
+        "supabase_column": "cust_property_types",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "custInvoicedClosedLost": {
+        "supabase_column": "cust_invoiced_closed_lost",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "lifecycleActiveComplete": {
+        "supabase_column": "lifecycle_active_complete",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "lifecycleCompletedWO": {
+        "supabase_column": "lifecycle_completed_wo",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "lifecycleActiveSent": {
+        "supabase_column": "lifecycle_active_sent",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "associatedActivities": {
+        "supabase_column": "associated_activities",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "custFactoringApproved": {
+        "supabase_column": "cust_factoring_approved",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "custInvoicedAllClosed": {
+        "supabase_column": "cust_invoiced_all_closed",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "lifecycleSentWorkorder": {
+        "supabase_column": "lifecycle_sent_workorder",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "custInvoicedClosedWon": {
+        "supabase_column": "cust_invoiced_closed_won",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "custVendorPortalURL": {
+        "supabase_column": "cust_vendor_portal_url",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedJobs": {
+        "supabase_column": "associated_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "custAssociatedCoordinatorContact": {
+        "supabase_column": "cust_associated_coordinator_contact",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "custApEmail": {
+        "supabase_column": "cust_ap_email",
+        "pg_type": "text",
+        "sample_count": 7
+      },
+      "custAssociatedApContact": {
+        "supabase_column": "cust_associated_ap_contact",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "custApPaymentMethod": {
+        "supabase_column": "cust_ap_payment_method",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "custFactoringSetUp": {
+        "supabase_column": "cust_factoring_set_up",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "custAssociatedApprovalContact": {
+        "supabase_column": "cust_associated_approval_contact",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "custApSource": {
+        "supabase_column": "cust_ap_source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbLicenseNum": {
+        "supabase_column": "smb_license_num",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "smbInsuranceExp": {
+        "supabase_column": "smb_insurance_exp",
+        "pg_type": "timestamptz",
+        "sample_count": 3
+      },
+      "smbRequestedJob": {
+        "supabase_column": "smb_requested_job",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "smbLicenseExp": {
+        "supabase_column": "smb_license_exp",
+        "pg_type": "timestamptz",
+        "sample_count": 3
+      },
+      "smbInsuranceNum": {
+        "supabase_column": "smb_insurance_num",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "orgWebsite": {
+        "supabase_column": "org_website",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbBankRouteNum": {
+        "supabase_column": "smb_bank_route_num",
+        "pg_type": "integer",
+        "sample_count": 13
+      },
+      "smbBankAccNum": {
+        "supabase_column": "smb_bank_acc_num",
+        "pg_type": "integer",
+        "sample_count": 13
+      },
+      "custApPaymentDiscount": {
+        "supabase_column": "cust_ap_payment_discount",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "custBillToAddress": {
+        "supabase_column": "cust_bill_to_address",
+        "pg_type": "jsonb",
+        "sample_count": 2
+      },
+      "smbAgreedToPaymentMethod": {
+        "supabase_column": "smb_agreed_to_payment_method",
+        "pg_type": "text",
+        "sample_count": 13
+      },
+      "smbDateAgreedToSmbSla": {
+        "supabase_column": "smb_date_agreed_to_smb_sla",
+        "pg_type": "timestamptz",
+        "sample_count": 13
+      },
+      "dateAgreedToCommunications": {
+        "supabase_column": "date_agreed_to_communications",
+        "pg_type": "timestamptz",
+        "sample_count": 13
+      },
+      "orgAgreedToCommunications": {
+        "supabase_column": "org_agreed_to_communications",
+        "pg_type": "text",
+        "sample_count": 13
+      },
+      "smbOrientationComplete": {
+        "supabase_column": "smb_orientation_complete",
+        "pg_type": "text",
+        "sample_count": 12
+      },
+      "smbDateAgreedToSubcontracting": {
+        "supabase_column": "smb_date_agreed_to_subcontracting",
+        "pg_type": "timestamptz",
+        "sample_count": 13
+      },
+      "smbDateOrientationCallCompleted": {
+        "supabase_column": "smb_date_orientation_call_completed",
+        "pg_type": "timestamptz",
+        "sample_count": 14
+      },
+      "smbDateApprovedForWork": {
+        "supabase_column": "smb_date_approved_for_work",
+        "pg_type": "timestamptz",
+        "sample_count": 10
+      },
+      "smbAgreedToSmbSLA": {
+        "supabase_column": "smb_agreed_to_smb_sla",
+        "pg_type": "text",
+        "sample_count": 14
+      },
+      "smbDateAgreedToPaymentMethod": {
+        "supabase_column": "smb_date_agreed_to_payment_method",
+        "pg_type": "timestamptz",
+        "sample_count": 13
+      },
+      "smbAgreedToSubcontracting": {
+        "supabase_column": "smb_agreed_to_subcontracting",
+        "pg_type": "text",
+        "sample_count": 12
+      },
+      "noteCust": {
+        "supabase_column": "note_cust",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "noteOrgBio": {
+        "supabase_column": "note_org_bio",
+        "pg_type": "text",
+        "sample_count": 1
+      },
+      "metricSmbRevCurrentPerWeek": {
+        "supabase_column": "metric_smb_rev_current_per_week",
+        "pg_type": "integer",
+        "sample_count": 1
+      },
+      "metricGoalWeeklyJobVolume": {
+        "supabase_column": "metric_goal_weekly_job_volume",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "metricSmbRevGoalPerWeek": {
+        "supabase_column": "metric_smb_rev_goal_per_week",
+        "pg_type": "integer",
+        "sample_count": 1
+      }
+    }
+  },
+  "payment": {
+    "bubble_name": "payment",
+    "supabase_table": "b_payment",
+    "records_scanned": 500,
+    "field_count": 15,
+    "fields": {
+      "associatedJob": {
+        "supabase_column": "associated_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedSmbOrg": {
+        "supabase_column": "associated_smb_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobWorkComplete": {
+        "supabase_column": "job_work_complete",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "smbAddress": {
+        "supabase_column": "smb_address",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "zapTriggerSuccess": {
+        "supabase_column": "zap_trigger_success",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "dateSentToQuickbooks": {
+        "supabase_column": "date_sent_to_quickbooks",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedSmbUser": {
+        "supabase_column": "associated_smb_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "amountSmbPrice": {
+        "supabase_column": "amount_smb_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "paymentStatus": {
+        "supabase_column": "payment_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobWorkOrder": {
+        "supabase_column": "job_work_order",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "jobAddress": {
+        "supabase_column": "job_address",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "pricerecommendations": {
+    "bubble_name": "pricerecommendations",
+    "supabase_table": "b_pricerecommendations",
+    "records_scanned": 8,
+    "field_count": 8,
+    "fields": {
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 8
+      },
+      "parentService": {
+        "supabase_column": "parent_service",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 8
+      },
+      "avgClosedWonPrice": {
+        "supabase_column": "avg_closed_won_price",
+        "pg_type": "integer",
+        "sample_count": 8
+      },
+      "recommendedPrice": {
+        "supabase_column": "recommended_price",
+        "pg_type": "integer",
+        "sample_count": 8
+      },
+      "Service": {
+        "supabase_column": "service",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 1
+      }
+    }
+  },
+  "publishedsmbs": {
+    "bubble_name": "publishedsmbs",
+    "supabase_table": "b_publishedsmbs",
+    "records_scanned": 500,
+    "field_count": 11,
+    "fields": {
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "SMB ID": {
+        "supabase_column": "smb_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "completed": {
+        "supabase_column": "completed",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "smbName": {
+        "supabase_column": "smb_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "viewed": {
+        "supabase_column": "viewed",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Accepted": {
+        "supabase_column": "accepted",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Quotation date": {
+        "supabase_column": "quotation_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "pushnotification": {
+    "bubble_name": "pushnotification",
+    "supabase_table": "b_pushnotification",
+    "records_scanned": 354,
+    "field_count": 9,
+    "fields": {
+      "Title": {
+        "supabase_column": "title",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "user": {
+        "supabase_column": "user_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "sub text": {
+        "supabase_column": "sub_text",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "status": {
+        "supabase_column": "status",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "qarecord": {
+    "bubble_name": "qarecord",
+    "supabase_table": "b_qarecord",
+    "records_scanned": 500,
+    "field_count": 9,
+    "fields": {
+      "success_mmScore": {
+        "supabase_column": "success_mm_score",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "success_pmcScore": {
+        "supabase_column": "success_pmc_score",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "success_smbScore": {
+        "supabase_column": "success_smb_score",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "success_futureSuggestion": {
+        "supabase_column": "success_future_suggestion",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "success?": {
+        "supabase_column": "success",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "quotelineitem": {
+    "bubble_name": "quotelineitem",
+    "supabase_table": "b_quotelineitem",
+    "records_scanned": 500,
+    "field_count": 15,
+    "fields": {
+      "associatedQuote": {
+        "supabase_column": "associated_quote",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "unitQuantity": {
+        "supabase_column": "unit_quantity",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "changePrice?": {
+        "supabase_column": "change_price",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "totalPrice": {
+        "supabase_column": "total_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "associatedJob": {
+        "supabase_column": "associated_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "unitPrice": {
+        "supabase_column": "unit_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "n8n": {
+        "supabase_column": "n8n",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "description": {
+        "supabase_column": "description",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "unit measurement": {
+        "supabase_column": "unit_measurement",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "changePriceReason": {
+        "supabase_column": "change_price_reason",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "costOfMaterial": {
+        "supabase_column": "cost_of_material",
+        "pg_type": "numeric",
+        "sample_count": 20
+      }
+    }
+  },
+  "response": {
+    "bubble_name": "response",
+    "supabase_table": "b_response",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "revenuegoals": {
+    "bubble_name": "revenuegoals",
+    "supabase_table": "b_revenuegoals",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "scopetestdata": {
+    "bubble_name": "scopetestdata",
+    "supabase_table": "b_scopetestdata",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "sectionengagementtrack": {
+    "bubble_name": "sectionengagementtrack",
+    "supabase_table": "b_sectionengagementtrack",
+    "records_scanned": 500,
+    "field_count": 10,
+    "fields": {
+      "enterTime": {
+        "supabase_column": "enter_time",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "leaveTime": {
+        "supabase_column": "leave_time",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "relatedUser": {
+        "supabase_column": "related_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "createdDateTxt": {
+        "supabase_column": "created_date_txt",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Duration": {
+        "supabase_column": "duration",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "pageName": {
+        "supabase_column": "page_name",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "serviceticket": {
+    "bubble_name": "serviceticket",
+    "supabase_table": "b_serviceticket",
+    "records_scanned": 78,
+    "field_count": 14,
+    "fields": {
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedSmbOrg": {
+        "supabase_column": "associated_smb_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedCustCompany": {
+        "supabase_column": "associated_cust_company",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "description": {
+        "supabase_column": "description",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "serviceTicketCategory": {
+        "supabase_column": "service_ticket_category",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedMM": {
+        "supabase_column": "associated_mm",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "serviceTicketStatus": {
+        "supabase_column": "service_ticket_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateResolved": {
+        "supabase_column": "date_resolved",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "resolution": {
+        "supabase_column": "resolution",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedJob": {
+        "supabase_column": "associated_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "ticketNotes": {
+        "supabase_column": "ticket_notes",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "slackalytics": {
+    "bubble_name": "slackalytics",
+    "supabase_table": "b_slackalytics",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "smbav": {
+    "bubble_name": "smbav",
+    "supabase_table": "b_smbav",
+    "records_scanned": 30,
+    "field_count": 9,
+    "fields": {
+      "services": {
+        "supabase_column": "services",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "management tools": {
+        "supabase_column": "management_tools",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "markets": {
+        "supabase_column": "markets",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "user": {
+        "supabase_column": "user_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "open availability": {
+        "supabase_column": "open_availability",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 4
+      }
+    }
+  },
+  "smbonboardintent": {
+    "bubble_name": "smbonboardintent",
+    "supabase_table": "b_smbonboardintent",
+    "records_scanned": 500,
+    "field_count": 24,
+    "fields": {
+      "revenueGoal": {
+        "supabase_column": "revenue_goal",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbPriority": {
+        "supabase_column": "smb_priority",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "baselineWeeklyRevenue": {
+        "supabase_column": "baseline_weekly_revenue",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "SuperServices": {
+        "supabase_column": "super_services",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "market": {
+        "supabase_column": "market",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "nameFirst": {
+        "supabase_column": "name_first",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "pageExit": {
+        "supabase_column": "page_exit",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "nameLast": {
+        "supabase_column": "name_last",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "businessName": {
+        "supabase_column": "business_name",
+        "pg_type": "text",
+        "sample_count": 16
+      },
+      "phone": {
+        "supabase_column": "phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "website": {
+        "supabase_column": "website",
+        "pg_type": "text",
+        "sample_count": 14
+      },
+      "sourceURL": {
+        "supabase_column": "source_url",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbSource": {
+        "supabase_column": "smb_source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "utmCampaign": {
+        "supabase_column": "utm_campaign",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "utmMedium": {
+        "supabase_column": "utm_medium",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "utmSource": {
+        "supabase_column": "utm_source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "utmTerm": {
+        "supabase_column": "utm_term",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedSmbUser": {
+        "supabase_column": "associated_smb_user",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "user": {
+        "supabase_column": "user_val",
+        "pg_type": "text",
+        "sample_count": 3
+      },
+      "monthlyjobcmpl": {
+        "supabase_column": "monthlyjobcmpl",
+        "pg_type": "integer",
+        "sample_count": 3
+      }
+    }
+  },
+  "smbquestionnaire": {
+    "bubble_name": "smbquestionnaire",
+    "supabase_table": "b_smbquestionnaire",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "smbquote": {
+    "bubble_name": "smbquote",
+    "supabase_table": "b_smbquote",
+    "records_scanned": 500,
+    "field_count": 20,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "dateQuoteSubmitted": {
+        "supabase_column": "date_quote_submitted",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "quoteAdditionalRecommendations": {
+        "supabase_column": "quote_additional_recommendations",
+        "pg_type": "text",
+        "sample_count": 13
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "source": {
+        "supabase_column": "source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "quoteExpectedMinutesTimeToComplete": {
+        "supabase_column": "quote_expected_minutes_time_to_complete",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "quoteScopeOfWork": {
+        "supabase_column": "quote_scope_of_work",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "amountCostOfMaterials": {
+        "supabase_column": "amount_cost_of_materials",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "quoteExpectedTimeToComplete": {
+        "supabase_column": "quote_expected_time_to_complete",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "added by": {
+        "supabase_column": "added_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "quoteSmbName": {
+        "supabase_column": "quote_smb_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "statusQuote": {
+        "supabase_column": "status_quote",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedSmbUser": {
+        "supabase_column": "associated_smb_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "quoteSmbPhone": {
+        "supabase_column": "quote_smb_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "onsitePhotos": {
+        "supabase_column": "onsite_photos",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "amountCustTotal": {
+        "supabase_column": "amount_cust_total",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "amountSmbTotal": {
+        "supabase_column": "amount_smb_total",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "dateCompletionExpected": {
+        "supabase_column": "date_completion_expected",
+        "pg_type": "timestamptz",
+        "sample_count": 1
+      }
+    }
+  },
+  "smbrequest": {
+    "bubble_name": "smbrequest",
+    "supabase_table": "b_smbrequest",
+    "records_scanned": 368,
+    "field_count": 22,
+    "fields": {
+      "address": {
+        "supabase_column": "address",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "Context": {
+        "supabase_column": "context",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "specialRequest": {
+        "supabase_column": "special_request",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Services": {
+        "supabase_column": "services",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "createdBy": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedJob": {
+        "supabase_column": "associated_job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Stage": {
+        "supabase_column": "stage",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Market": {
+        "supabase_column": "market",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Priority": {
+        "supabase_column": "priority",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedPMC": {
+        "supabase_column": "associated_pmc",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Status": {
+        "supabase_column": "status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "dateDeadline": {
+        "supabase_column": "date_deadline",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedSmbUser": {
+        "supabase_column": "associated_smb_user",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedSmbOrg": {
+        "supabase_column": "associated_smb_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "closedWonReason": {
+        "supabase_column": "closed_won_reason",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "closedOppReason": {
+        "supabase_column": "closed_opp_reason",
+        "pg_type": "text",
+        "sample_count": 7
+      },
+      "Type": {
+        "supabase_column": "type_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "requestOwner": {
+        "supabase_column": "request_owner",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "smbsmsblast": {
+    "bubble_name": "smbsmsblast",
+    "supabase_table": "b_smbsmsblast",
+    "records_scanned": 109,
+    "field_count": 9,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "messages": {
+        "supabase_column": "messages",
+        "pg_type": "text[]",
+        "sample_count": 2
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "messageText": {
+        "supabase_column": "message_text",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "sentCount": {
+        "supabase_column": "sent_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "orgs": {
+        "supabase_column": "orgs",
+        "pg_type": "text[]",
+        "sample_count": 8
+      },
+      "activities": {
+        "supabase_column": "activities",
+        "pg_type": "text[]",
+        "sample_count": 20
+      }
+    }
+  },
+  "smstable": {
+    "bubble_name": "smstable",
+    "supabase_table": "b_smstable",
+    "records_scanned": 8,
+    "field_count": 7,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 8
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 8
+      },
+      "message": {
+        "supabase_column": "message",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "stage": {
+        "supabase_column": "stage",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "last edited by": {
+        "supabase_column": "last_edited_by",
+        "pg_type": "text",
+        "sample_count": 1
+      }
+    }
+  },
+  "snapshot_daily": {
+    "bubble_name": "snapshot_daily",
+    "supabase_table": "b_snapshot_daily",
+    "records_scanned": 134,
+    "field_count": 10,
+    "fields": {
+      "SMBOrgSnapshotList": {
+        "supabase_column": "smborg_snapshot_list",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "recordDate": {
+        "supabase_column": "record_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "MMSnapshotList": {
+        "supabase_column": "mmsnapshot_list",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "MarketSnapshotList": {
+        "supabase_column": "market_snapshot_list",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "PMCSnapshotList": {
+        "supabase_column": "pmcsnapshot_list",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "OverallSnapshot": {
+        "supabase_column": "overall_snapshot",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "snapshot_market": {
+    "bubble_name": "snapshot_market",
+    "supabase_table": "b_snapshot_market",
+    "records_scanned": 500,
+    "field_count": 15,
+    "fields": {
+      "agg-cw_count": {
+        "supabase_column": "agg_cw_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "market": {
+        "supabase_column": "market",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "open_jobs": {
+        "supabase_column": "open_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "agg-co_count": {
+        "supabase_column": "agg_co_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "date": {
+        "supabase_column": "date_val",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "closed_jobs": {
+        "supabase_column": "closed_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "agg-gross_profit": {
+        "supabase_column": "agg_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-cw_revenue": {
+        "supabase_column": "agg_cw_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-service_types_requested_list": {
+        "supabase_column": "agg_service_types_requested_list",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "agg-op-gross profit": {
+        "supabase_column": "agg_op_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-co_revenue": {
+        "supabase_column": "agg_co_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "snapshot_mm": {
+    "bubble_name": "snapshot_mm",
+    "supabase_table": "b_snapshot_mm",
+    "records_scanned": 500,
+    "field_count": 20,
+    "fields": {
+      "snap-open_WOs_count": {
+        "supabase_column": "snap_open_wos_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-activities_added_count": {
+        "supabase_column": "snap_activities_added_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "date": {
+        "supabase_column": "date_val",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "agg-cw_count": {
+        "supabase_column": "agg_cw_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "marketmanager": {
+        "supabase_column": "marketmanager",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "snap-old_open_WOs_count": {
+        "supabase_column": "snap_old_open_wos_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-tomorrow_next_steps_count": {
+        "supabase_column": "snap_tomorrow_next_steps_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-past_due_next_steps_count": {
+        "supabase_column": "snap_past_due_next_steps_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "agg-co_count": {
+        "supabase_column": "agg_co_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-jobs_w_no_2_day_activity": {
+        "supabase_column": "snap_jobs_w_no_2_day_activity",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "open_jobs": {
+        "supabase_column": "open_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "closed_jobs": {
+        "supabase_column": "closed_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "agg-gross_profit": {
+        "supabase_column": "agg_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-cw_revenue": {
+        "supabase_column": "agg_cw_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-op-gross profit": {
+        "supabase_column": "agg_op_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-co_revenue": {
+        "supabase_column": "agg_co_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "snapshot_overall": {
+    "bubble_name": "snapshot_overall",
+    "supabase_table": "b_snapshot_overall",
+    "records_scanned": 134,
+    "field_count": 25,
+    "fields": {
+      "CW_smbs_one_day": {
+        "supabase_column": "cw_smbs_one_day",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "active_pmcs": {
+        "supabase_column": "active_pmcs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "active_smbs": {
+        "supabase_column": "active_smbs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "agg-cw_revenue": {
+        "supabase_column": "agg_cw_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-open_wos_count": {
+        "supabase_column": "snap_open_wos_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-gross_profit": {
+        "supabase_column": "agg_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-co_count": {
+        "supabase_column": "agg_co_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "closed_jobs": {
+        "supabase_column": "closed_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "open_jobs": {
+        "supabase_column": "open_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "CW_pmcs_one_day": {
+        "supabase_column": "cw_pmcs_one_day",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "agg-cw_count": {
+        "supabase_column": "agg_cw_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "date": {
+        "supabase_column": "date_val",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "agg-MM_accepted_quoted_revenue": {
+        "supabase_column": "agg_mm_accepted_quoted_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-op-gross profit": {
+        "supabase_column": "agg_op_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-PMC_approved_revenue": {
+        "supabase_column": "agg_pmc_approved_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-co_revenue": {
+        "supabase_column": "agg_co_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-active_CW_SMBs_count": {
+        "supabase_column": "snap_active_cw_smbs_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-active_SMBs_count": {
+        "supabase_column": "snap_active_smbs_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-active_customers_count": {
+        "supabase_column": "snap_active_customers_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-matched_SMBs_count": {
+        "supabase_column": "snap_matched_smbs_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-active_CW_customers_count": {
+        "supabase_column": "snap_active_cw_customers_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "snapshot_pmc": {
+    "bubble_name": "snapshot_pmc",
+    "supabase_table": "b_snapshot_pmc",
+    "records_scanned": 500,
+    "field_count": 18,
+    "fields": {
+      "open_jobs": {
+        "supabase_column": "open_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "date": {
+        "supabase_column": "date_val",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "snap-past_due_quote_count": {
+        "supabase_column": "snap_past_due_quote_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "agg-cw_count": {
+        "supabase_column": "agg_cw_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "snap-open_wos_count": {
+        "supabase_column": "snap_open_wos_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "pmc": {
+        "supabase_column": "pmc",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "agg-co_count": {
+        "supabase_column": "agg_co_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "snap-old_wos_count": {
+        "supabase_column": "snap_old_wos_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-cw_revenue": {
+        "supabase_column": "agg_cw_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-gross_profit": {
+        "supabase_column": "agg_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "closed_jobs": {
+        "supabase_column": "closed_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "agg-services_requested": {
+        "supabase_column": "agg_services_requested",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "agg-co_revenue": {
+        "supabase_column": "agg_co_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-op-gross profit": {
+        "supabase_column": "agg_op_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "snapshot_smborg": {
+    "bubble_name": "snapshot_smborg",
+    "supabase_table": "b_snapshot_smborg",
+    "records_scanned": 500,
+    "field_count": 20,
+    "fields": {
+      "snap-open_wos_count": {
+        "supabase_column": "snap_open_wos_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "date": {
+        "supabase_column": "date_val",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "agg-co_count": {
+        "supabase_column": "agg_co_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "snap-quotes_past_due_count": {
+        "supabase_column": "snap_quotes_past_due_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "open_jobs": {
+        "supabase_column": "open_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "snap-completions_past_due_count": {
+        "supabase_column": "snap_completions_past_due_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "agg-cw_count": {
+        "supabase_column": "agg_cw_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "snap-old-wos_count": {
+        "supabase_column": "snap_old_wos_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbOrg": {
+        "supabase_column": "smb_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "closed_jobs": {
+        "supabase_column": "closed_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "agg-won_payout_amount": {
+        "supabase_column": "agg_won_payout_amount",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-gross_profit": {
+        "supabase_column": "agg_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-cw-revenue": {
+        "supabase_column": "agg_cw_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-co_revenue": {
+        "supabase_column": "agg_co_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-op_payout_amount": {
+        "supabase_column": "agg_op_payout_amount",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "agg-op-gross profit": {
+        "supabase_column": "agg_op_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  },
+  "task": {
+    "bubble_name": "task",
+    "supabase_table": "b_task",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "tripcharge": {
+    "bubble_name": "tripcharge",
+    "supabase_table": "b_tripcharge",
+    "records_scanned": 30,
+    "field_count": 9,
+    "fields": {
+      "job": {
+        "supabase_column": "job",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbPrice": {
+        "supabase_column": "smb_price",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "photos": {
+        "supabase_column": "photos",
+        "pg_type": "text[]",
+        "sample_count": 14
+      },
+      "custPrice": {
+        "supabase_column": "cust_price",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "whyTripCharge": {
+        "supabase_column": "why_trip_charge",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "tripchargev2": {
+    "bubble_name": "tripchargev2",
+    "supabase_table": "b_tripchargev2",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "twiliocall": {
+    "bubble_name": "twiliocall",
+    "supabase_table": "b_twiliocall",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "twilioconversation": {
+    "bubble_name": "twilioconversation",
+    "supabase_table": "b_twilioconversation",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "twiliomessage": {
+    "bubble_name": "twiliomessage",
+    "supabase_table": "b_twiliomessage",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "usagemetrics": {
+    "bubble_name": "usagemetrics",
+    "supabase_table": "b_usagemetrics",
+    "records_scanned": 500,
+    "field_count": 14,
+    "fields": {
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "pageName": {
+        "supabase_column": "page_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "whoInteracted": {
+        "supabase_column": "who_interacted",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Type": {
+        "supabase_column": "type_val",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "elementName": {
+        "supabase_column": "element_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Interaction": {
+        "supabase_column": "interaction",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "elementType": {
+        "supabase_column": "element_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "uniqueVisits": {
+        "supabase_column": "unique_visits",
+        "pg_type": "text[]",
+        "sample_count": 4
+      },
+      "visitTimeDateTxt": {
+        "supabase_column": "visit_time_date_txt",
+        "pg_type": "text",
+        "sample_count": 4
+      },
+      "visitTimeDate": {
+        "supabase_column": "visit_time_date",
+        "pg_type": "timestamptz",
+        "sample_count": 4
+      },
+      "allVisits": {
+        "supabase_column": "all_visits",
+        "pg_type": "integer",
+        "sample_count": 4
+      }
+    }
+  },
+  "user": {
+    "bubble_name": "user",
+    "supabase_table": "b_user",
+    "records_scanned": 500,
+    "field_count": 52,
+    "fields": {
+      "userFunction": {
+        "supabase_column": "user_function",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "authentication": {
+        "supabase_column": "authentication",
+        "pg_type": "jsonb",
+        "sample_count": 20
+      },
+      "userAssociatedOrg": {
+        "supabase_column": "user_associated_org",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userFullName": {
+        "supabase_column": "user_full_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userAccountStatus": {
+        "supabase_column": "user_account_status",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userContactEmail": {
+        "supabase_column": "user_contact_email",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "user_signed_up": {
+        "supabase_column": "user_signed_up",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "mmSlackID": {
+        "supabase_column": "mm_slack_id",
+        "pg_type": "text",
+        "sample_count": 15
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "userLoginLastDate": {
+        "supabase_column": "user_login_last_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "custContactHubspotID": {
+        "supabase_column": "cust_contact_hubspot_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userLastName": {
+        "supabase_column": "user_last_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userLifecycle": {
+        "supabase_column": "user_lifecycle",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userAcceptTerms": {
+        "supabase_column": "user_accept_terms",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "mmDialpadId": {
+        "supabase_column": "mm_dialpad_id",
+        "pg_type": "text",
+        "sample_count": 11
+      },
+      "userBetaTester": {
+        "supabase_column": "user_beta_tester",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "userRole": {
+        "supabase_column": "user_role",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userContactPhone": {
+        "supabase_column": "user_contact_phone",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userFirstName": {
+        "supabase_column": "user_first_name",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userVerified": {
+        "supabase_column": "user_verified",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "mmJobPage": {
+        "supabase_column": "mm_job_page",
+        "pg_type": "integer",
+        "sample_count": 11
+      },
+      "smb_quote_date_count": {
+        "supabase_column": "smb_quote_date_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "userAddedVia": {
+        "supabase_column": "user_added_via",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smb_on_time_quote_count": {
+        "supabase_column": "smb_on_time_quote_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbSource": {
+        "supabase_column": "smb_source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userAddedBy": {
+        "supabase_column": "user_added_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "smbNumOfTrucks": {
+        "supabase_column": "smb_num_of_trucks",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smbApprovedForWork": {
+        "supabase_column": "smb_approved_for_work",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "smbSpecialEquipment&Notes": {
+        "supabase_column": "smb_special_equipment&notes",
+        "pg_type": "text",
+        "sample_count": 7
+      },
+      "smb_compl_date_count": {
+        "supabase_column": "smb_compl_date_count",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "userLoginCode": {
+        "supabase_column": "user_login_code",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "smb1099": {
+        "supabase_column": "smb1099",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userLoginExpiration": {
+        "supabase_column": "user_login_expiration",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "smbServices": {
+        "supabase_column": "smb_services",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "userVerifiedDetails": {
+        "supabase_column": "user_verified_details",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "userMarkets": {
+        "supabase_column": "user_markets",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "userVerifiedContact": {
+        "supabase_column": "user_verified_contact",
+        "pg_type": "boolean",
+        "sample_count": 20
+      },
+      "contactAddedBy": {
+        "supabase_column": "contact_added_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userAssociatedActivities": {
+        "supabase_column": "user_associated_activities",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "custJobTitle": {
+        "supabase_column": "cust_job_title",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "userAlphaTester": {
+        "supabase_column": "user_alpha_tester",
+        "pg_type": "boolean",
+        "sample_count": 1
+      },
+      "userAssociatedJobs": {
+        "supabase_column": "user_associated_jobs",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "smbNumOfHelpers": {
+        "supabase_column": "smb_num_of_helpers",
+        "pg_type": "integer",
+        "sample_count": 18
+      },
+      "smbAssociatedSmbOnboardIntent": {
+        "supabase_column": "smb_associated_smb_onboard_intent",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "userProfilePic": {
+        "supabase_column": "user_profile_pic",
+        "pg_type": "text",
+        "sample_count": 8
+      },
+      "delete account": {
+        "supabase_column": "delete_account",
+        "pg_type": "boolean",
+        "sample_count": 1
+      },
+      "userLanguage": {
+        "supabase_column": "user_language",
+        "pg_type": "text[]",
+        "sample_count": 6
+      },
+      "smbDailyAvailability": {
+        "supabase_column": "smb_daily_availability",
+        "pg_type": "text[]",
+        "sample_count": 11
+      },
+      "smb_on_time_compl_count": {
+        "supabase_column": "smb_on_time_compl_count",
+        "pg_type": "integer",
+        "sample_count": 1
+      },
+      "smbW9": {
+        "supabase_column": "smb_w9",
+        "pg_type": "text",
+        "sample_count": 1
+      }
+    }
+  },
+  "utmevent": {
+    "bubble_name": "utmevent",
+    "supabase_table": "b_utmevent",
+    "records_scanned": 0,
+    "field_count": 0,
+    "fields": {}
+  },
+  "utmviews": {
+    "bubble_name": "utmviews",
+    "supabase_table": "b_utmviews",
+    "records_scanned": 500,
+    "field_count": 9,
+    "fields": {
+      "term": {
+        "supabase_column": "term",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "campaign": {
+        "supabase_column": "campaign",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "source": {
+        "supabase_column": "source",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "medium": {
+        "supabase_column": "medium",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "device": {
+        "supabase_column": "device",
+        "pg_type": "text",
+        "sample_count": 6
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      }
+    }
+  },
+  "visit": {
+    "bubble_name": "visit",
+    "supabase_table": "b_visit",
+    "records_scanned": 500,
+    "field_count": 8,
+    "fields": {
+      "visitType": {
+        "supabase_column": "visit_type",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "visitPermission": {
+        "supabase_column": "visit_permission",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "tenant_response_stage": {
+        "supabase_column": "tenant_response_stage",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "tenant_last_viewed": {
+        "supabase_column": "tenant_last_viewed",
+        "pg_type": "timestamptz",
+        "sample_count": 2
+      }
+    }
+  },
+  "weekly_stats_breasy": {
+    "bubble_name": "weekly_stats_breasy",
+    "supabase_table": "b_weekly_stats_breasy",
+    "records_scanned": 5,
+    "field_count": 57,
+    "fields": {
+      "t30CompletionPerc": {
+        "supabase_column": "t30_completion_perc",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "weekNumActiveSMBs": {
+        "supabase_column": "week_num_active_smbs",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "weekPercWOsRecurring": {
+        "supabase_column": "week_perc_wos_recurring",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "mtdnumActiveCustomers": {
+        "supabase_column": "mtdnum_active_customers",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "weekGrossProfit": {
+        "supabase_column": "week_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30GpPerc": {
+        "supabase_column": "t30_gp_perc",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "mtdNumActiveCWSMBs": {
+        "supabase_column": "mtd_num_active_cwsmbs",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30NumActiveCWSMBs": {
+        "supabase_column": "t30_num_active_cwsmbs",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdavgWOsPerCustomer": {
+        "supabase_column": "mtdavg_wos_per_customer",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "t30CWRev%": {
+        "supabase_column": "t30_cwrev%",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "weekAverageAmtPerWO": {
+        "supabase_column": "week_average_amt_per_wo",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "t30avgWOsPerCustomer": {
+        "supabase_column": "t30avg_wos_per_customer",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "end_date": {
+        "supabase_column": "end_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      },
+      "weekGpPerc": {
+        "supabase_column": "week_gp_perc",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      },
+      "weekCWRev%": {
+        "supabase_column": "week_cwrev%",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "t30NumActiveCWCustomers": {
+        "supabase_column": "t30_num_active_cwcustomers",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30FollowThroughV1": {
+        "supabase_column": "t30_follow_through_v1",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "mtdNumRecurringWOsCompleted": {
+        "supabase_column": "mtd_num_recurring_wos_completed",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30NumActiveSMBs": {
+        "supabase_column": "t30_num_active_smbs",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdNumWOsCreated": {
+        "supabase_column": "mtd_num_wos_created",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      },
+      "DailiesMTD": {
+        "supabase_column": "dailies_mtd",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "t30NumRecurringWOsCompleted": {
+        "supabase_column": "t30_num_recurring_wos_completed",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30NumWOsCompleted": {
+        "supabase_column": "t30_num_wos_completed",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdGrossProfit": {
+        "supabase_column": "mtd_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "weekNumActiveCWSMBs": {
+        "supabase_column": "week_num_active_cwsmbs",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "weekQuotedAmounts": {
+        "supabase_column": "week_quoted_amounts",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdCompletionPerc": {
+        "supabase_column": "mtd_completion_perc",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "t30numActiveCustomers": {
+        "supabase_column": "t30num_active_customers",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "weekNumActiveCWCustomers": {
+        "supabase_column": "week_num_active_cwcustomers",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "DailiesWeek": {
+        "supabase_column": "dailies_week",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "mtdNumActiveSMBs": {
+        "supabase_column": "mtd_num_active_smbs",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "weekCompletionPerc": {
+        "supabase_column": "week_completion_perc",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "weekInvoiced": {
+        "supabase_column": "week_invoiced",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "weekNumRecurringWOsCompleted": {
+        "supabase_column": "week_num_recurring_wos_completed",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30AverageAmtPerWO": {
+        "supabase_column": "t30_average_amt_per_wo",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "t30QuotedAmounts": {
+        "supabase_column": "t30_quoted_amounts",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdNumActiveCWCustomers": {
+        "supabase_column": "mtd_num_active_cwcustomers",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30GrossProfit": {
+        "supabase_column": "t30_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "weekavgWOsPerCustomer": {
+        "supabase_column": "weekavg_wos_per_customer",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "DailiesT30": {
+        "supabase_column": "dailies_t30",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "mtdNumWOsCompleted": {
+        "supabase_column": "mtd_num_wos_completed",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30PercWOsRecurring": {
+        "supabase_column": "t30_perc_wos_recurring",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "mtdQuotedAmounts": {
+        "supabase_column": "mtd_quoted_amounts",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdCWRev%": {
+        "supabase_column": "mtd_cwrev%",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "weekNumWOsCreated": {
+        "supabase_column": "week_num_wos_created",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "weekNumWOsCompleted": {
+        "supabase_column": "week_num_wos_completed",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "t30NumWOsCreated": {
+        "supabase_column": "t30_num_wos_created",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdAverageAmtPerWO": {
+        "supabase_column": "mtd_average_amt_per_wo",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "mtdGpPerc": {
+        "supabase_column": "mtd_gp_perc",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "weeknumActiveCustomers": {
+        "supabase_column": "weeknum_active_customers",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdInvoiced": {
+        "supabase_column": "mtd_invoiced",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "mtdPercWOsRecurring": {
+        "supabase_column": "mtd_perc_wos_recurring",
+        "pg_type": "numeric",
+        "sample_count": 5
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "t30Invoiced": {
+        "supabase_column": "t30_invoiced",
+        "pg_type": "integer",
+        "sample_count": 5
+      }
+    }
+  },
+  "weekly_stats_main": {
+    "bubble_name": "weekly_stats_main",
+    "supabase_table": "b_weekly_stats_main",
+    "records_scanned": 5,
+    "field_count": 15,
+    "fields": {
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      },
+      "t30Dailies": {
+        "supabase_column": "t30_dailies",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "week_Dailies": {
+        "supabase_column": "week_dailies",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      },
+      "mtdDailies": {
+        "supabase_column": "mtd_dailies",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "pmcs": {
+        "supabase_column": "pmcs",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "yrwk": {
+        "supabase_column": "yrwk",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "smbs": {
+        "supabase_column": "smbs",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "breasy": {
+        "supabase_column": "breasy",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "week": {
+        "supabase_column": "week",
+        "pg_type": "integer",
+        "sample_count": 5
+      },
+      "markets": {
+        "supabase_column": "markets",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "mms": {
+        "supabase_column": "mms",
+        "pg_type": "text[]",
+        "sample_count": 5
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 5
+      },
+      "endDate": {
+        "supabase_column": "end_date",
+        "pg_type": "timestamptz",
+        "sample_count": 5
+      }
+    }
+  },
+  "weekly_stats_market": {
+    "bubble_name": "weekly_stats_market",
+    "supabase_table": "b_weekly_stats_market",
+    "records_scanned": 95,
+    "field_count": 33,
+    "fields": {
+      "t30ServiceTypesRequested": {
+        "supabase_column": "t30_service_types_requested",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "monthGPGoal": {
+        "supabase_column": "month_gpgoal",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30OpRev": {
+        "supabase_column": "t30_op_rev",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "mtdPercProgressThroughMonth": {
+        "supabase_column": "mtd_perc_progress_through_month",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30WonRev": {
+        "supabase_column": "t30_won_rev",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30speedFromCreatedToCustQuote": {
+        "supabase_column": "t30speed_from_created_to_cust_quote",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30numCustomerActivities": {
+        "supabase_column": "t30num_customer_activities",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "numOldWos": {
+        "supabase_column": "num_old_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numCWSMBs": {
+        "supabase_column": "t30num_cwsmbs",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numActiveSMBs": {
+        "supabase_column": "t30num_active_smbs",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "t30numWonWOs": {
+        "supabase_column": "t30num_won_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30Snapshots": {
+        "supabase_column": "t30_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "mtdLostGP": {
+        "supabase_column": "mtd_lost_gp",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "numOpenWos": {
+        "supabase_column": "num_open_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdSnapshots": {
+        "supabase_column": "mtd_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "t30DaysToCustQuote": {
+        "supabase_column": "t30_days_to_cust_quote",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "mtdGpGoal": {
+        "supabase_column": "mtd_gp_goal",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "mtdGrossProfit": {
+        "supabase_column": "mtd_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30CWRevPerc": {
+        "supabase_column": "t30_cwrev_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "t30numActiveCustomers": {
+        "supabase_column": "t30num_active_customers",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numOpWOs": {
+        "supabase_column": "t30num_op_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numSMBActivities": {
+        "supabase_column": "t30num_smbactivities",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numCWCustomers": {
+        "supabase_column": "t30num_cwcustomers",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "endDate": {
+        "supabase_column": "end_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedMarket": {
+        "supabase_column": "associated_market",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "t30ComplPerc": {
+        "supabase_column": "t30_compl_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "mtdGPPerc": {
+        "supabase_column": "mtd_gpperc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "weekSnapshots": {
+        "supabase_column": "week_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "mtdPercToGpGoal": {
+        "supabase_column": "mtd_perc_to_gp_goal",
+        "pg_type": "numeric",
+        "sample_count": 20
+      }
+    }
+  },
+  "weekly_stats_mm": {
+    "bubble_name": "weekly_stats_mm",
+    "supabase_table": "b_weekly_stats_mm",
+    "records_scanned": 38,
+    "field_count": 32,
+    "fields": {
+      "t30numActiveCustomers": {
+        "supabase_column": "t30num_active_customers",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numSMBActivities": {
+        "supabase_column": "t30num_smbactivities",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdpercentProgress through month": {
+        "supabase_column": "mtdpercent_progress_through_month",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30WonRev": {
+        "supabase_column": "t30_won_rev",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "t30CompletionPerc": {
+        "supabase_column": "t30_completion_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "monthGP goal": {
+        "supabase_column": "month_gp_goal",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numCWSMBs": {
+        "supabase_column": "t30num_cwsmbs",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30OpRev": {
+        "supabase_column": "t30_op_rev",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdGPGoal": {
+        "supabase_column": "mtd_gpgoal",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "mtdGPPerc": {
+        "supabase_column": "mtd_gpperc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "numOldWos": {
+        "supabase_column": "num_old_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30CwRevPerc": {
+        "supabase_column": "t30_cw_rev_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "associatedMM": {
+        "supabase_column": "associated_mm",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "numNextStepsPastDue": {
+        "supabase_column": "num_next_steps_past_due",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "t30numOpWOs": {
+        "supabase_column": "t30num_op_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numCustomerActivities": {
+        "supabase_column": "t30num_customer_activities",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30daysToCustQuote": {
+        "supabase_column": "t30days_to_cust_quote",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "t30numCWCustomers": {
+        "supabase_column": "t30num_cwcustomers",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numActiveSMBs": {
+        "supabase_column": "t30num_active_smbs",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdLostGP": {
+        "supabase_column": "mtd_lost_gp",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "endDate": {
+        "supabase_column": "end_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "mtdGrossProfit": {
+        "supabase_column": "mtd_gross_profit",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "numOpenWos": {
+        "supabase_column": "num_open_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdpercentToGPGoal": {
+        "supabase_column": "mtdpercent_to_gpgoal",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30numWonWOs": {
+        "supabase_column": "t30num_won_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30Snapshots": {
+        "supabase_column": "t30_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "mtdSnapshots": {
+        "supabase_column": "mtd_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "weekSnapshots": {
+        "supabase_column": "week_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      }
+    }
+  },
+  "weekly_stats_pmc": {
+    "bubble_name": "weekly_stats_pmc",
+    "supabase_table": "b_weekly_stats_pmc",
+    "records_scanned": 500,
+    "field_count": 21,
+    "fields": {
+      "associatedPMC": {
+        "supabase_column": "associated_pmc",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "t30ComplPerc": {
+        "supabase_column": "t30_compl_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "weekPastDueApprovals": {
+        "supabase_column": "week_past_due_approvals",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30GPP": {
+        "supabase_column": "t30_gpp",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30WonRevenue": {
+        "supabase_column": "t30_won_revenue",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "AssociatedMarkets": {
+        "supabase_column": "associated_markets",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "numOldWos": {
+        "supabase_column": "num_old_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "numOpenWos": {
+        "supabase_column": "num_open_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "numPastDueApprovals": {
+        "supabase_column": "num_past_due_approvals",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "t30CWRevPerc": {
+        "supabase_column": "t30_cwrev_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "endDate": {
+        "supabase_column": "end_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "MarketMMs": {
+        "supabase_column": "market_mms",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "t30ServiceTypesRecieved": {
+        "supabase_column": "t30_service_types_recieved",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "t30NumLostWos": {
+        "supabase_column": "t30_num_lost_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30OpRev": {
+        "supabase_column": "t30_op_rev",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30NumWOComplete": {
+        "supabase_column": "t30_num_wocomplete",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30PastDueApprovals": {
+        "supabase_column": "t30_past_due_approvals",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      }
+    }
+  },
+  "weekly_stats_smborg": {
+    "bubble_name": "weekly_stats_smborg",
+    "supabase_table": "b_weekly_stats_smborg",
+    "records_scanned": 500,
+    "field_count": 46,
+    "fields": {
+      "t30ComplPerc": {
+        "supabase_column": "t30_compl_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "mtdPercOfMonth": {
+        "supabase_column": "mtd_perc_of_month",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "Created Date": {
+        "supabase_column": "created_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "numOpenWos": {
+        "supabase_column": "num_open_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdNumPastDueQuotes": {
+        "supabase_column": "mtd_num_past_due_quotes",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30CWRevPerc": {
+        "supabase_column": "t30_cwrev_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "mtdWonGP": {
+        "supabase_column": "mtd_won_gp",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "numPastDueScheduled": {
+        "supabase_column": "num_past_due_scheduled",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "associatedSMBOrg": {
+        "supabase_column": "associated_smborg",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "numPastDueQuotes": {
+        "supabase_column": "num_past_due_quotes",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30WonRev": {
+        "supabase_column": "t30_won_rev",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30WonGP": {
+        "supabase_column": "t30_won_gp",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30SMBPayout": {
+        "supabase_column": "t30_smbpayout",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "MonthlyPayoutGoal": {
+        "supabase_column": "monthly_payout_goal",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdGpPerc": {
+        "supabase_column": "mtd_gp_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30numWonWOs": {
+        "supabase_column": "t30num_won_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "numOldWos": {
+        "supabase_column": "num_old_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdPaidOut": {
+        "supabase_column": "mtd_paid_out",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30PastDueQuotes": {
+        "supabase_column": "t30_past_due_quotes",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "MarketMMs": {
+        "supabase_column": "market_mms",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "t30OpRev": {
+        "supabase_column": "t30_op_rev",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30PastDueScheduled": {
+        "supabase_column": "t30_past_due_scheduled",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "WKPayoutGoalx4": {
+        "supabase_column": "wkpayout_goalx4",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdNumPastDueScheduled": {
+        "supabase_column": "mtd_num_past_due_scheduled",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "endDate": {
+        "supabase_column": "end_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "mtdOpGP": {
+        "supabase_column": "mtd_op_gp",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdPayoutGoal": {
+        "supabase_column": "mtd_payout_goal",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "Modified Date": {
+        "supabase_column": "modified_date",
+        "pg_type": "timestamptz",
+        "sample_count": 20
+      },
+      "mtdLostPay": {
+        "supabase_column": "mtd_lost_pay",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "mtdPayPerc": {
+        "supabase_column": "mtd_pay_perc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "Created By": {
+        "supabase_column": "created_by",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "_id": {
+        "supabase_column": "bubble_id",
+        "pg_type": "text",
+        "sample_count": 20
+      },
+      "associatedMarkets": {
+        "supabase_column": "associated_markets",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "MTD Won Pay": {
+        "supabase_column": "mtd_won_pay",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30numOpWOs": {
+        "supabase_column": "t30num_op_wos",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30LostGP": {
+        "supabase_column": "t30_lost_gp",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30GPPerc": {
+        "supabase_column": "t30_gpperc",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30Snapshots": {
+        "supabase_column": "t30_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "mtdSnapshots": {
+        "supabase_column": "mtd_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "weekSnapshots": {
+        "supabase_column": "week_snapshots",
+        "pg_type": "text[]",
+        "sample_count": 20
+      },
+      "t30PercToPayoutGoal": {
+        "supabase_column": "t30_perc_to_payout_goal",
+        "pg_type": "integer",
+        "sample_count": 7
+      },
+      "mtdPercToPayoutGoal": {
+        "supabase_column": "mtd_perc_to_payout_goal",
+        "pg_type": "integer",
+        "sample_count": 7
+      },
+      "t30PercQuoteFormCreation": {
+        "supabase_column": "t30_perc_quote_form_creation",
+        "pg_type": "integer",
+        "sample_count": 20
+      },
+      "t30FollowthroughV2": {
+        "supabase_column": "t30_followthrough_v2",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30FollowThroughV1": {
+        "supabase_column": "t30_follow_through_v1",
+        "pg_type": "numeric",
+        "sample_count": 20
+      },
+      "t30PercCompletionFormCreation": {
+        "supabase_column": "t30_perc_completion_form_creation",
+        "pg_type": "integer",
+        "sample_count": 20
+      }
+    }
+  }
+}
