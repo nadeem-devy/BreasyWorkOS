@@ -1,17 +1,17 @@
 'use client';
 
-import { SupabaseProvider, useSupabase } from '@/components/providers/SupabaseProvider';
 import AppBadge from '@/components/shared/AppBadge';
 import ExportButton from '@/components/shared/ExportButton';
 import { format } from 'date-fns';
 import { Clock, Phone, Mail, FileText, Monitor, ChevronDown, ChevronUp, LayoutGrid, PhoneOutgoing, PhoneIncoming, PhoneMissed } from 'lucide-react';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useCallback } from 'react';
 
 interface TimelineEntry {
   id: string;
   source: string;
   event_type: string;
   description: string;
+  user_name: string;
   wo_id?: string;
   created_at: string;
   duration_seconds?: number;
@@ -67,111 +67,38 @@ function mapSourceToFilter(source: string): PlatformFilter {
   return 'activity';
 }
 
-function TimelineContent() {
-  const supabase = useSupabase();
+export default function TimelinePage() {
   const [users, setUsers] = useState<UserOption[]>([]);
-  const [selectedUser, setSelectedUser] = useState('');
+  const [selectedUser, setSelectedUser] = useState('all');
   const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
   const [entries, setEntries] = useState<TimelineEntry[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState<PlatformFilter>('all');
   const [expandedEntry, setExpandedEntry] = useState<string | null>(null);
   const [sessionTimes, setSessionTimes] = useState<{ bubble: number; gmail: number; dialpad: number; melio: number; idle: number }>({ bubble: 0, gmail: 0, dialpad: 0, melio: 0, idle: 0 });
 
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) {
-        window.location.href = '/login';
-        return;
-      }
-      supabase
-        .from('OS_profiles')
-        .select('id, full_name')
-        .eq('is_active', true)
-        .order('full_name')
-        .then(({ data }) => {
-          if (data) setUsers(data);
-        });
-    });
-  }, [supabase]);
-
-  useEffect(() => {
-    if (!selectedUser) return;
+  const fetchTimeline = useCallback(async () => {
     setLoading(true);
     setActiveFilter('all');
     setExpandedEntry(null);
 
-    async function fetchTimeline() {
-      const startOfDay = `${date}T00:00:00`;
-      const endOfDay = `${date}T23:59:59`;
-      const allEntries: TimelineEntry[] = [];
-
-      const [bubble, financial, gmail, dialpad, melio, activity, sessions] = await Promise.all([
-        supabase.from('OS_bubble_events').select('*').eq('user_id', selectedUser).gte('created_at', startOfDay).lte('created_at', endOfDay).order('created_at'),
-        supabase.from('OS_bubble_financial_events').select('*').eq('user_id', selectedUser).gte('created_at', startOfDay).lte('created_at', endOfDay).order('created_at'),
-        supabase.from('OS_gmail_events').select('*').eq('user_id', selectedUser).gte('created_at', startOfDay).lte('created_at', endOfDay).order('created_at'),
-        supabase.from('OS_dialpad_events').select('*').eq('user_id', selectedUser).gte('started_at', startOfDay).lte('started_at', endOfDay).order('started_at'),
-        supabase.from('OS_melio_events').select('*').eq('user_id', selectedUser).gte('created_at', startOfDay).lte('created_at', endOfDay).order('created_at'),
-        supabase.from('OS_activity_events').select('*').eq('user_id', selectedUser).gte('created_at', startOfDay).lte('created_at', endOfDay).in('event_type', ['tab_activated', 'idle_start', 'idle_end']).order('created_at'),
-        supabase.from('OS_sessions').select('time_bubble, time_gmail, time_dialpad, time_melio, time_idle').eq('user_id', selectedUser).gte('started_at', startOfDay).lte('started_at', endOfDay),
-      ]);
-
-      // Aggregate session times
-      const times = { bubble: 0, gmail: 0, dialpad: 0, melio: 0, idle: 0 };
-      sessions.data?.forEach((s) => {
-        times.bubble += s.time_bubble ?? 0;
-        times.gmail += s.time_gmail ?? 0;
-        times.dialpad += s.time_dialpad ?? 0;
-        times.melio += s.time_melio ?? 0;
-        times.idle += s.time_idle ?? 0;
-      });
-      setSessionTimes(times);
-
-      bubble.data?.forEach((r) => allEntries.push({
-        id: `b-${r.id}`, source: 'bubble', event_type: r.event_type,
-        description: `${r.event_type.replace(/_/g, ' ')} on ${r.wo_id}`,
-        wo_id: r.wo_id, created_at: r.created_at,
-        raw: r,
-      }));
-      financial.data?.forEach((r) => allEntries.push({
-        id: `bf-${r.id}`, source: 'bubble', event_type: r.event_type,
-        description: `${r.event_type.replace(/_/g, ' ')}${r.amount ? ` $${r.amount}` : ''} on ${r.wo_id}`,
-        wo_id: r.wo_id, created_at: r.created_at, amount: r.amount,
-        raw: r,
-      }));
-      gmail.data?.forEach((r) => allEntries.push({
-        id: `g-${r.id}`, source: 'gmail', event_type: r.event_type,
-        description: `Email ${r.direction === 'outbound' ? 'sent' : 'received'}${r.subject_snippet ? `: ${r.subject_snippet}` : ''}`,
-        created_at: r.created_at, direction: r.direction, subject_snippet: r.subject_snippet,
-        raw: r,
-      }));
-      dialpad.data?.forEach((r) => allEntries.push({
-        id: `d-${r.id}`, source: 'dialpad', event_type: r.event_type,
-        description: `Call ${r.event_type.replace('call_', '')}${r.duration_seconds ? ` (${Math.floor(r.duration_seconds / 60)}m ${r.duration_seconds % 60}s)` : ''}${r.contact_name ? ` - ${r.contact_name}` : ''}`,
-        created_at: r.started_at || r.created_at, duration_seconds: r.duration_seconds,
-        direction: r.direction, contact_name: r.contact_name,
-        raw: r,
-      }));
-      melio.data?.forEach((r) => allEntries.push({
-        id: `m-${r.id}`, source: 'melio', event_type: r.event_type,
-        description: `Payment ${r.payment_status} - $${r.amount} to ${r.vendor_name}`,
-        created_at: r.created_at, amount: r.amount,
-        raw: r,
-      }));
-      activity.data?.forEach((r) => allEntries.push({
-        id: `a-${r.id}`, source: r.app ?? 'other', event_type: r.event_type,
-        description: r.event_type === 'idle_start' ? 'Went idle' : r.event_type === 'idle_end' ? 'Back to active' : `Switched to ${r.app}`,
-        created_at: r.created_at,
-        raw: r,
-      }));
-
-      allEntries.sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
-      setEntries(allEntries);
-      setLoading(false);
+    try {
+      const res = await fetch(`/api/admin/timeline?userId=${selectedUser}&date=${date}`);
+      const data = await res.json();
+      setEntries(data.entries ?? []);
+      setSessionTimes(data.sessionTimes ?? { bubble: 0, gmail: 0, dialpad: 0, melio: 0, idle: 0 });
+      if (data.users && users.length === 0) {
+        setUsers(data.users);
+      }
+    } catch {
+      setEntries([]);
     }
+    setLoading(false);
+  }, [selectedUser, date, users.length]);
 
+  useEffect(() => {
     fetchTimeline();
-  }, [supabase, selectedUser, date]);
+  }, [fetchTimeline]);
 
   // Compute per-platform stats from entries
   const platformStats = useMemo(() => {
@@ -187,20 +114,14 @@ function TimelineContent() {
       const platform = mapSourceToFilter(entry.source);
       stats[platform].events++;
       stats.all.events++;
-      // Accumulate call duration for dialpad
       if (platform === 'dialpad' && entry.duration_seconds) {
         stats.dialpad.timeSeconds += entry.duration_seconds;
       }
     }
-    // Use session times where available
     stats.bubble.timeSeconds = sessionTimes.bubble;
     stats.gmail.timeSeconds = sessionTimes.gmail;
     stats.melio.timeSeconds = sessionTimes.melio;
-    // For dialpad, prefer call duration sum from events (actual talk time)
-    // stats.dialpad.timeSeconds is already set from events above, keep it
-    // For activity, use idle time
     stats.activity.timeSeconds = sessionTimes.idle;
-    // All = sum of session times + dialpad call time
     stats.all.timeSeconds = sessionTimes.bubble + sessionTimes.gmail + sessionTimes.dialpad + sessionTimes.melio + stats.dialpad.timeSeconds;
     return stats;
   }, [entries, sessionTimes]);
@@ -226,7 +147,6 @@ function TimelineContent() {
       const shortestCall = completedDurations.length > 0 ? Math.min(...completedDurations) : 0;
       const avgDuration = completedDurations.length > 0 ? Math.round(totalDuration / completedDurations.length) : 0;
 
-      // Group outbound calls by contact (who they called)
       const outboundByContact: Record<string, { count: number; duration: number; number: string }> = {};
       for (const e of outboundCalls) {
         const name = e.contact_name || (e.raw?.to_number as string) || 'Unknown';
@@ -235,7 +155,6 @@ function TimelineContent() {
         outboundByContact[name].duration += e.duration_seconds ?? 0;
       }
 
-      // Group inbound calls by contact (who called them)
       const inboundByContact: Record<string, { count: number; duration: number; number: string }> = {};
       for (const e of inboundCalls) {
         const name = e.contact_name || (e.raw?.from_number as string) || 'Unknown';
@@ -289,7 +208,7 @@ function TimelineContent() {
           onChange={(e) => setSelectedUser(e.target.value)}
           className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm focus:border-blue-500 focus:outline-none"
         >
-          <option value="">Select a user...</option>
+          <option value="all">All Users</option>
           {users.map((u) => (
             <option key={u.id} value={u.id}>{u.full_name}</option>
           ))}
@@ -303,11 +222,7 @@ function TimelineContent() {
         />
       </div>
 
-      {!selectedUser ? (
-        <div className="flex h-40 items-center justify-center rounded-lg border border-dashed border-gray-300 text-sm text-gray-400">
-          Select a user to view their timeline
-        </div>
-      ) : loading ? (
+      {loading ? (
         <div className="flex h-40 items-center justify-center text-sm text-gray-400">Loading...</div>
       ) : entries.length === 0 ? (
         <div className="flex h-40 items-center justify-center rounded-lg border border-dashed border-gray-300 text-sm text-gray-400">
@@ -357,9 +272,7 @@ function TimelineContent() {
 
               {detailedStats.type === 'dialpad' && (
                 <div className="space-y-4">
-                  {/* Row 1: Call Summary + Duration */}
                   <div className="grid gap-4 lg:grid-cols-2">
-                    {/* Call Summary */}
                     <div className="rounded-lg bg-white/80 p-4">
                       <h4 className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gray-500">
                         <Phone size={12} /> Call Summary
@@ -384,7 +297,6 @@ function TimelineContent() {
                       </div>
                     </div>
 
-                    {/* Duration */}
                     <div className="rounded-lg bg-white/80 p-4">
                       <h4 className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gray-500">
                         <Clock size={12} /> Duration
@@ -410,9 +322,7 @@ function TimelineContent() {
                     </div>
                   </div>
 
-                  {/* Row 2: Outbound + Inbound contact tables */}
                   <div className="grid gap-4 lg:grid-cols-2">
-                    {/* Outbound - Who They Called */}
                     <div className="rounded-lg bg-white/80 p-4">
                       <h4 className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gray-500">
                         <PhoneOutgoing size={12} /> Outbound &mdash; Who They Called
@@ -448,7 +358,6 @@ function TimelineContent() {
                       )}
                     </div>
 
-                    {/* Inbound - Who Called Them */}
                     <div className="rounded-lg bg-white/80 p-4">
                       <h4 className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gray-500">
                         <PhoneIncoming size={12} /> Inbound &mdash; Who Called Them
@@ -591,6 +500,11 @@ function TimelineContent() {
                       </span>
                       {getEventIcon(entry.source)}
                       <AppBadge app={entry.source} />
+                      {selectedUser === 'all' && entry.user_name && (
+                        <span className="shrink-0 text-xs font-medium text-gray-500">
+                          {entry.user_name}
+                        </span>
+                      )}
                       <span className="truncate text-gray-700">{entry.description}</span>
                       {entry.wo_id && (
                         <span className="shrink-0 text-xs font-medium text-blue-600">{entry.wo_id}</span>
@@ -625,13 +539,5 @@ function TimelineContent() {
         </>
       )}
     </div>
-  );
-}
-
-export default function TimelinePage() {
-  return (
-    <SupabaseProvider>
-      <TimelineContent />
-    </SupabaseProvider>
   );
 }

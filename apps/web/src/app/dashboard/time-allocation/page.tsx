@@ -1,10 +1,9 @@
 'use client';
 
-import { SupabaseProvider, useSupabase } from '@/components/providers/SupabaseProvider';
 import ExportButton from '@/components/shared/ExportButton';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { BarChart3, ChevronDown, ChevronRight } from 'lucide-react';
-import { format, subDays } from 'date-fns';
+import { format } from 'date-fns';
 import {
   BarChart,
   Bar,
@@ -49,8 +48,7 @@ function isKnownDomain(domain: string) {
   return false;
 }
 
-function AllocationContent() {
-  const supabase = useSupabase();
+export default function TimeAllocationPage() {
   const [data, setData] = useState<AllocationRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [period, setPeriod] = useState<'day' | 'week' | 'month'>('day');
@@ -59,55 +57,21 @@ function AllocationContent() {
   const [domainBreakdown, setDomainBreakdown] = useState<DomainEntry[]>([]);
   const [domainLoading, setDomainLoading] = useState(false);
 
-  useEffect(() => {
-    async function fetchData() {
-      setLoading(true);
-      const endDate = date;
-      const startDate = period === 'day'
-        ? date
-        : period === 'week'
-          ? format(subDays(new Date(date), 6), 'yyyy-MM-dd')
-          : format(subDays(new Date(date), 29), 'yyyy-MM-dd');
-
-      const { data: profiles } = await supabase
-        .from('OS_profiles')
-        .select('id, full_name')
-        .eq('is_active', true);
-
-      if (!profiles) { setLoading(false); return; }
-
-      const rows: AllocationRow[] = [];
-      for (const profile of profiles) {
-        const { data: sessions } = await supabase
-          .from('OS_sessions')
-          .select('time_bubble, time_gmail, time_dialpad, time_melio, time_other, time_idle, duration_seconds')
-          .eq('user_id', profile.id)
-          .gte('started_at', `${startDate}T00:00:00`)
-          .lte('started_at', `${endDate}T23:59:59`);
-
-        if (sessions && sessions.length > 0) {
-          const totals = sessions.reduce(
-            (acc, s) => ({
-              bubble: acc.bubble + (s.time_bubble ?? 0),
-              gmail: acc.gmail + (s.time_gmail ?? 0),
-              dialpad: acc.dialpad + (s.time_dialpad ?? 0),
-              melio: acc.melio + (s.time_melio ?? 0),
-              other: acc.other + (s.time_other ?? 0),
-              idle: acc.idle + (s.time_idle ?? 0),
-              total: acc.total + (s.duration_seconds ?? 0),
-            }),
-            { bubble: 0, gmail: 0, dialpad: 0, melio: 0, other: 0, idle: 0, total: 0 }
-          );
-          rows.push({ user_id: profile.id, full_name: profile.full_name, ...totals });
-        }
-      }
-
-      rows.sort((a, b) => b.total - a.total);
-      setData(rows);
-      setLoading(false);
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/admin/time-allocation?date=${date}&period=${period}`);
+      const json = await res.json();
+      setData(json.rows ?? []);
+    } catch {
+      setData([]);
     }
+    setLoading(false);
+  }, [period, date]);
+
+  useEffect(() => {
     fetchData();
-  }, [supabase, period, date]);
+  }, [fetchData]);
 
   async function toggleDomainBreakdown(userId: string) {
     if (expandedUser === userId) {
@@ -119,20 +83,18 @@ function AllocationContent() {
     setExpandedUser(userId);
     setDomainLoading(true);
 
-    const endDate = date;
     const startDate = period === 'day'
       ? date
       : period === 'week'
-        ? format(subDays(new Date(date), 6), 'yyyy-MM-dd')
-        : format(subDays(new Date(date), 29), 'yyyy-MM-dd');
+        ? format(new Date(new Date(date).getTime() - 6 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+        : format(new Date(new Date(date).getTime() - 29 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd');
 
     const res = await fetch(
-      `/api/admin/domains?userId=${userId}&date=${startDate}&endDate=${endDate}`
+      `/api/admin/domains?userId=${userId}&date=${startDate}&endDate=${date}`
     );
     const domains = await res.json();
 
     if (Array.isArray(domains)) {
-      // Filter out known app domains, group and sort
       const otherDomains = domains
         .filter((d: DomainEntry) => !isKnownDomain(d.domain))
         .sort((a: DomainEntry, b: DomainEntry) => b.seconds - a.seconds);
@@ -304,13 +266,5 @@ function AllocationContent() {
         </>
       )}
     </div>
-  );
-}
-
-export default function TimeAllocationPage() {
-  return (
-    <SupabaseProvider>
-      <AllocationContent />
-    </SupabaseProvider>
   );
 }
