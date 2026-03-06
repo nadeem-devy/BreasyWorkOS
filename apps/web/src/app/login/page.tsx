@@ -17,7 +17,7 @@ export default function LoginPage() {
     setLoading(true);
     setError('');
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
@@ -25,10 +25,25 @@ export default function LoginPage() {
     if (error) {
       setError(error.message);
       setLoading(false);
-    } else {
-      router.push('/dashboard/live');
-      router.refresh();
+      return;
     }
+
+    // Only allow super_admin to access the dashboard
+    const { data: profile } = await supabase
+      .from('OS_profiles')
+      .select('role')
+      .eq('id', data.user.id)
+      .single();
+
+    if (!profile || profile.role !== 'super_admin') {
+      await supabase.auth.signOut();
+      setError('Access denied. Only admins can sign in to the dashboard.');
+      setLoading(false);
+      return;
+    }
+
+    router.push('/dashboard/live');
+    router.refresh();
   }
 
   return (
