@@ -2,10 +2,9 @@ import { classifyUrl, isTrackedApp } from '../lib/app-classifier';
 import { sanitizeUrl, sanitizeTitle } from '../lib/url-sanitizer';
 import { initBuffer, addEvent, flushBuffer } from '../lib/event-buffer';
 import { initIdleDetector, getIdleState } from '../lib/idle-detector';
-import { startSession, switchApp, markIdle, markActive, getSessionId, endSession, syncSessionToDb, incrementEventCount } from '../lib/session-manager';
-import { getUserId, getSupabase } from '../lib/supabase-client';
+import { startSession, switchApp, markIdle, markActive, getSessionId, endSession, syncSessionToDb, incrementEventCount, isSessionExpired } from '../lib/session-manager';
+import { getUserId, getSupabase, clearAuth } from '../lib/supabase-client';
 import { trackDomain, pauseDomainTracking, resumeDomainTracking, syncDomainsToDB } from '../lib/domain-tracker';
-import { logInteraction, analyzeActivity, getAndClearFlags } from '../lib/fake-activity-detector';
 import type { TrackedApp } from '../types/events';
 
 let lastTrackedApp: TrackedApp | null = null;
@@ -135,8 +134,20 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   await syncSessionToDb();
   await syncDomainsToDB();
 
-  // Analyze activity patterns for fake behavior
-  await analyzeAndSyncFlags(userId);
+  // Auto-logout after 8 hours
+  if (await isSessionExpired()) {
+    await addEvent({
+      user_id: userId,
+      app: 'other',
+      event_type: 'sign_off',
+      metadata: { reason: 'auto_logout_8h' },
+      session_id: (await getSessionId()) ?? undefined,
+    });
+    await endSession();
+    await flushBuffer();
+    await clearAuth();
+    return;
+  }
 
   const idleState = getIdleState();
   if (idleState !== 'active') return;
@@ -159,25 +170,6 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   await incrementEventCount();
 });
 
-/** Analyze fake activity and sync flags to DB */
-async function analyzeAndSyncFlags(userId: string) {
-  await analyzeActivity();
-  const flags = await getAndClearFlags();
-  if (flags.length === 0) return;
-
-  const supabase = await getSupabase();
-  if (!supabase) return;
-
-  const rows = flags.map((f) => ({
-    user_id: userId,
-    flag_type: f.reason,
-    confidence: f.confidence,
-    details: f.details,
-    flagged_at: f.timestamp,
-  }));
-
-  await supabase.from('OS_activity_flags').insert(rows);
-}
 
 // Idle detection events
 chrome.idle.onStateChanged.addListener(async (newState) => {
@@ -218,11 +210,6 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     return true; // Async response
   }
 
-  // Content script sends user interaction data for fake activity detection
-  if (message.type === 'ACTIVITY_INPUT') {
-    logInteraction(message.data);
-    return false;
-  }
 
   if (message.type === 'FORCE_FLUSH') {
     syncSessionToDb()
