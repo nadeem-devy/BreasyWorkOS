@@ -178,3 +178,12 @@ export async function getSessionId(): Promise<string | null> {
 export async function getSessionState(): Promise<SessionState> {
   return getSession();
 }
+
+const MAX_SESSION_MS = 8 * 60 * 60 * 1000; // 8 hours
+
+/** Returns true if the current session has exceeded 8 hours */
+export async function isSessionExpired(): Promise<boolean> {
+  const session = await getSession();
+  if (!session.sessionId || !session.startedAt) return false;
+  return Date.now() - new Date(session.startedAt).getTime() >= MAX_SESSION_MS;
+}
