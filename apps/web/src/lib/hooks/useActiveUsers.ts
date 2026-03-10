@@ -18,6 +18,7 @@ export interface ActiveUser {
   timeGmail: number;
   timeDialpad: number;
   timeMelio: number;
+  sessionCount: number;
 }
 
 export function useActiveUsers() {
@@ -26,15 +27,23 @@ export function useActiveUsers() {
   const [loading, setLoading] = useState(true);
 
   const fetchUsers = useCallback(async () => {
-    const [{ data, error }, { data: profiles }] = await Promise.all([
+    const today = new Date().toISOString().slice(0, 10);
+    const [{ data, error }, { data: profiles }, { data: sessionCounts }] = await Promise.all([
       supabase.from('v_user_current_status').select('*'),
       supabase.from('OS_profiles').select('id, avatar_url'),
+      supabase.from('OS_sessions').select('user_id').gte('started_at', `${today}T00:00:00`),
     ]);
 
     if (!error && data) {
       // Build avatar map
       const avatarMap: Record<string, string | null> = {};
       for (const p of profiles ?? []) avatarMap[p.id] = p.avatar_url;
+
+      // Build session count map for today
+      const sessionCountMap: Record<string, number> = {};
+      for (const s of sessionCounts ?? []) {
+        sessionCountMap[s.user_id] = (sessionCountMap[s.user_id] ?? 0) + 1;
+      }
 
       // Deduplicate by user_id (view can return duplicates)
       const seen = new Set<string>();
@@ -60,6 +69,7 @@ export function useActiveUsers() {
           timeGmail: (row.time_gmail as number) ?? 0,
           timeDialpad: (row.time_dialpad as number) ?? 0,
           timeMelio: (row.time_melio as number) ?? 0,
+          sessionCount: sessionCountMap[row.user_id as string] ?? 0,
         }))
       );
     }

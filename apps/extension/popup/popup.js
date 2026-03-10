@@ -17,6 +17,14 @@ async function init() {
   const { userId } = await chrome.storage.local.get('userId');
 
   if (userId) {
+    // Verify we still have valid auth (auto-logout clears userId)
+    const { accessToken } = await chrome.storage.local.get('accessToken');
+    if (!accessToken) {
+      // Auto-logout happened — clear everything and show login
+      await chrome.storage.local.clear();
+      showLogin();
+      return;
+    }
     showDashboard();
   } else {
     showLogin();
@@ -172,7 +180,10 @@ loginForm.addEventListener('submit', async (e) => {
       // Non-critical — don't block login
     }
 
-    showDashboard();
+    // Tell service worker to start a new session
+    chrome.runtime.sendMessage({ type: 'START_SESSION' }, () => {
+      showDashboard();
+    });
   } catch (err) {
     loginError.textContent = err.message;
     loginError.style.display = 'block';

@@ -238,4 +238,15 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     })();
     return true;
   }
+
+  if (message.type === 'START_SESSION') {
+    (async () => {
+      await initBuffer();
+      initIdleDetector();
+      chrome.alarms.create('heartbeat', { periodInMinutes: 2 });
+      await emitSignOn();
+      sendResponse({ success: true });
+    })();
+    return true;
+  }
 });

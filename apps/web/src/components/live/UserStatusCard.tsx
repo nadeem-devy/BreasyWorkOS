@@ -4,8 +4,6 @@ import StatusDot from '@/components/shared/StatusDot';
 import AppBadge from '@/components/shared/AppBadge';
 import { formatDistanceToNow } from 'date-fns';
 import type { ActiveUser } from '@/lib/hooks/useActiveUsers';
-import { AlertTriangle } from 'lucide-react';
-
 function formatSeconds(s: number): string {
   const h = Math.floor(s / 3600);
   const m = Math.floor((s % 3600) / 60);
@@ -15,10 +13,9 @@ function formatSeconds(s: number): string {
 
 interface Props {
   user: ActiveUser;
-  flagCount?: number;
 }
 
-export default function UserStatusCard({ user, flagCount = 0 }: Props) {
+export default function UserStatusCard({ user }: Props) {
   const sessionDuration = user.sessionStarted
     ? Math.floor((Date.now() - new Date(user.sessionStarted).getTime()) / 1000)
     : 0;
@@ -28,9 +25,7 @@ export default function UserStatusCard({ user, flagCount = 0 }: Props) {
     : 'No activity';
 
   return (
-    <div className={`rounded-lg border bg-white p-4 transition-shadow hover:shadow-sm ${
-      flagCount > 0 ? 'border-amber-300 bg-amber-50/30' : 'border-gray-200'
-    }`}>
+    <div className="rounded-lg border border-gray-200 bg-white p-4 transition-shadow hover:shadow-sm">
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-2.5">
           <div className="relative shrink-0">
@@ -50,15 +45,7 @@ export default function UserStatusCard({ user, flagCount = 0 }: Props) {
             </div>
           </div>
           <div className="min-w-0">
-            <div className="flex items-center gap-1.5">
-              <span className="text-sm font-medium text-gray-900 truncate">{user.fullName}</span>
-              {flagCount > 0 && (
-                <span className="flex items-center gap-1 rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700" title="Suspicious activity detected">
-                  <AlertTriangle size={10} />
-                  {flagCount}
-                </span>
-              )}
-            </div>
+            <span className="text-sm font-medium text-gray-900 truncate">{user.fullName}</span>
           </div>
         </div>
         {user.currentApp && <AppBadge app={user.currentApp} />}
@@ -72,7 +59,14 @@ export default function UserStatusCard({ user, flagCount = 0 }: Props) {
 
       <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
         <span>Last: {lastActivity}</span>
-        {sessionDuration > 0 && <span>Session: {formatSeconds(sessionDuration)}</span>}
+        <div className="flex items-center gap-2">
+          {user.sessionCount > 0 && (
+            <span className="rounded bg-gray-100 px-1.5 py-0.5 text-gray-500">
+              {user.sessionCount} {user.sessionCount === 1 ? 'session' : 'sessions'}
+            </span>
+          )}
+          {sessionDuration > 0 && <span>Session: {formatSeconds(sessionDuration)}</span>}
+        </div>
       </div>
 
       {(user.timeBubble > 0 || user.timeGmail > 0 || user.timeDialpad > 0 || user.timeMelio > 0) && (

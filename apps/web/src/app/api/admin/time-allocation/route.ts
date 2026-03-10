@@ -32,6 +32,7 @@ export async function GET(request: NextRequest) {
     other: number;
     idle: number;
     total: number;
+    session_count: number;
   }
 
   const rows: AllocationRow[] = [];
@@ -56,7 +57,7 @@ export async function GET(request: NextRequest) {
         }),
         { bubble: 0, gmail: 0, dialpad: 0, melio: 0, other: 0, idle: 0, total: 0 }
       );
-      rows.push({ user_id: profile.id, full_name: profile.full_name, ...totals });
+      rows.push({ user_id: profile.id, full_name: profile.full_name, ...totals, session_count: sessions.length });
     }
   }
 
