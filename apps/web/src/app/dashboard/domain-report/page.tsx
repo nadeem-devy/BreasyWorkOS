@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Globe, AlertTriangle, ChevronDown, ChevronRight } from 'lucide-react';
+import { Globe, ChevronDown, ChevronRight } from 'lucide-react';
 import { format } from 'date-fns';
 
 interface UserProfile {
@@ -13,15 +13,6 @@ interface DomainEntry {
   domain: string;
   seconds: number;
   user_id?: string;
-}
-
-interface ActivityFlag {
-  id: number;
-  user_id: string;
-  flag_type: string;
-  confidence: number;
-  details: Record<string, unknown>;
-  flagged_at: string;
 }
 
 function formatTime(seconds: number): string {
@@ -37,18 +28,11 @@ function formatPercent(part: number, total: number): string {
   return `${Math.round((part / total) * 100)}%`;
 }
 
-const FLAG_LABELS: Record<string, string> = {
-  mouse_jiggler: 'Mouse Jiggler Detected',
-  periodic_clicks: 'Periodic Fake Clicks',
-  no_real_input: 'No Real Input (Mouse Only)',
-};
-
 export default function DomainReportPage() {
   const [users, setUsers] = useState<UserProfile[]>([]);
   const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
   const [selectedUser, setSelectedUser] = useState<string>('all');
   const [domains, setDomains] = useState<DomainEntry[]>([]);
-  const [flags, setFlags] = useState<ActivityFlag[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedDomain, setExpandedDomain] = useState<string | null>(null);
   const [userDomains, setUserDomains] = useState<Record<string, DomainEntry[]>>({});
@@ -68,13 +52,8 @@ export default function DomainReportPage() {
       setLoading(true);
 
       const userParam = selectedUser !== 'all' ? `&userId=${selectedUser}` : '';
-      const [domainsRes, flagsRes] = await Promise.all([
-        fetch(`/api/admin/domains?date=${date}${userParam}`),
-        fetch(`/api/admin/activity-flags?reviewed=false`),
-      ]);
-
+      const domainsRes = await fetch(`/api/admin/domains?date=${date}${userParam}`);
       const domainsData = await domainsRes.json();
-      const flagsData = await flagsRes.json();
 
       if (Array.isArray(domainsData)) {
         // Aggregate by domain across all users
@@ -86,17 +65,6 @@ export default function DomainReportPage() {
           .map(([domain, seconds]) => ({ domain, seconds }))
           .sort((a, b) => b.seconds - a.seconds);
         setDomains(sorted);
-      }
-
-      if (Array.isArray(flagsData)) {
-        // Filter flags to selected date
-        const dayFlags = flagsData.filter((f: ActivityFlag) =>
-          f.flagged_at.startsWith(date)
-        );
-        setFlags(selectedUser !== 'all'
-          ? dayFlags.filter((f: ActivityFlag) => f.user_id === selectedUser)
-          : dayFlags
-        );
       }
 
       setLoading(false);
@@ -167,34 +135,6 @@ export default function DomainReportPage() {
           ))}
         </select>
       </div>
-
-      {/* Activity Flags */}
-      {flags.length > 0 && (
-        <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
-          <div className="mb-2 flex items-center gap-2 text-sm font-medium text-amber-800">
-            <AlertTriangle size={16} />
-            Suspicious Activity Detected ({flags.length} flag{flags.length > 1 ? 's' : ''})
-          </div>
-          <div className="space-y-1.5">
-            {flags.map((f) => (
-              <div key={f.id} className="flex items-center justify-between text-xs">
-                <div className="flex items-center gap-2">
-                  <span className="font-medium text-amber-900">{getUserName(f.user_id)}</span>
-                  <span className="text-amber-700">{FLAG_LABELS[f.flag_type] ?? f.flag_type}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="rounded-full bg-amber-200 px-2 py-0.5 text-[10px] font-medium text-amber-800">
-                    {f.confidence}% confidence
-                  </span>
-                  <span className="text-amber-600">
-                    {format(new Date(f.flagged_at), 'h:mm a')}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       {loading ? (
         <div className="flex h-64 items-center justify-center text-sm text-gray-400">Loading...</div>
