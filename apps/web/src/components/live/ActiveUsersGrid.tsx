@@ -5,10 +5,9 @@ import type { ActiveUser } from '@/lib/hooks/useActiveUsers';
 
 interface Props {
   users: ActiveUser[];
-  flagCounts?: Record<string, number>;
 }
 
-export default function ActiveUsersGrid({ users, flagCounts = {} }: Props) {
+export default function ActiveUsersGrid({ users }: Props) {
   // Sort: active first, then idle, then offline
   const sorted = [...users].sort((a, b) => {
     const order = { active: 0, idle: 1, offline: 2 };
@@ -23,7 +22,6 @@ export default function ActiveUsersGrid({ users, flagCounts = {} }: Props) {
         <UserStatusCard
           key={user.userId}
           user={user}
-          flagCount={flagCounts[user.userId] ?? 0}
         />
       ))}
     </div>
