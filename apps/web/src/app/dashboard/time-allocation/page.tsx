@@ -24,6 +24,7 @@ interface AllocationRow {
   other: number;
   idle: number;
   total: number;
+  session_count: number;
 }
 
 interface DomainEntry {
@@ -56,6 +57,7 @@ export default function TimeAllocationPage() {
   const [expandedUser, setExpandedUser] = useState<string | null>(null);
   const [domainBreakdown, setDomainBreakdown] = useState<DomainEntry[]>([]);
   const [domainLoading, setDomainLoading] = useState(false);
+  const [allDomains, setAllDomains] = useState<Record<string, DomainEntry[]>>({});
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -63,6 +65,30 @@ export default function TimeAllocationPage() {
       const res = await fetch(`/api/admin/time-allocation?date=${date}&period=${period}`);
       const json = await res.json();
       setData(json.rows ?? []);
+
+      // Preload domain data for all users (for chart tooltip)
+      const startDate = period === 'day'
+        ? date
+        : period === 'week'
+          ? format(new Date(new Date(date).getTime() - 6 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+          : format(new Date(new Date(date).getTime() - 29 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd');
+
+      const domRes = await fetch(`/api/admin/domains?date=${startDate}&endDate=${date}`);
+      const domData = await domRes.json();
+      if (Array.isArray(domData)) {
+        const byUser: Record<string, DomainEntry[]> = {};
+        for (const d of domData) {
+          if (!d.user_id || isKnownDomain(d.domain)) continue;
+          if (!byUser[d.user_id]) byUser[d.user_id] = [];
+          const existing = byUser[d.user_id].find((e) => e.domain === d.domain);
+          if (existing) existing.seconds += d.seconds;
+          else byUser[d.user_id].push({ domain: d.domain, seconds: d.seconds });
+        }
+        for (const uid of Object.keys(byUser)) {
+          byUser[uid].sort((a, b) => b.seconds - a.seconds);
+        }
+        setAllDomains(byUser);
+      }
     } catch {
       setData([]);
     }
@@ -105,6 +131,7 @@ export default function TimeAllocationPage() {
 
   const chartData = data.map((r) => ({
     name: r.full_name.split(' ')[0],
+    userId: r.user_id,
     Bubble: Math.round(r.bubble / 60),
     Gmail: Math.round(r.gmail / 60),
     Dialpad: Math.round(r.dialpad / 60),
@@ -112,6 +139,42 @@ export default function TimeAllocationPage() {
     Other: Math.round(r.other / 60),
     Idle: Math.round(r.idle / 60),
   }));
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (!active || !payload || !payload.length) return null;
+    const userId = payload[0]?.payload?.userId;
+    const domains = userId ? allDomains[userId] ?? [] : [];
+    const topDomains = domains.slice(0, 8);
+
+    return (
+      <div className="rounded-lg border border-gray-200 bg-white p-3 shadow-lg text-xs">
+        <p className="font-semibold text-gray-900 mb-1.5">{label}</p>
+        {payload.map((entry: { name: string; value: number; color: string }) => (
+          <div key={entry.name} className="flex items-center justify-between gap-4" style={{ color: entry.color }}>
+            <span>{entry.name}</span>
+            <span className="font-medium">{entry.value}m</span>
+          </div>
+        ))}
+        {topDomains.length > 0 && (
+          <>
+            <div className="mt-2 pt-2 border-t border-gray-100">
+              <p className="font-medium text-gray-500 mb-1">Other Domains:</p>
+              {topDomains.map((d) => (
+                <div key={d.domain} className="flex items-center justify-between gap-3 text-gray-600">
+                  <span className="truncate max-w-[160px]">{d.domain}</span>
+                  <span className="tabular-nums">{formatHours(d.seconds)}</span>
+                </div>
+              ))}
+              {domains.length > 8 && (
+                <p className="text-gray-400 mt-0.5">+{domains.length - 8} more</p>
+              )}
+            </div>
+          </>
+        )}
+      </div>
+    );
+  };
 
   const totalActive = data.reduce((acc, r) => acc + r.total - r.idle, 0);
   const avgPerPerson = data.length > 0 ? Math.round(totalActive / data.length) : 0;
@@ -161,7 +224,7 @@ export default function TimeAllocationPage() {
               <BarChart data={chartData} layout="vertical" margin={{ left: 60 }}>
                 <XAxis type="number" label={{ value: 'Minutes', position: 'insideBottom', offset: -5 }} />
                 <YAxis type="category" dataKey="name" width={60} tick={{ fontSize: 12 }} />
-                <Tooltip formatter={(value) => `${value}m`} />
+                <Tooltip content={<CustomTooltip />} />
                 <Legend />
                 <Bar dataKey="Bubble" fill="#3B82F6" stackId="a" />
                 <Bar dataKey="Gmail" fill="#EF4444" stackId="a" />
