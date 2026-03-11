@@ -25,6 +25,8 @@ interface AllocationRow {
   idle: number;
   total: number;
   session_count: number;
+  first_start: string | null;
+  last_end: string | null;
 }
 
 interface DomainEntry {
@@ -256,6 +258,8 @@ export default function TimeAllocationPage() {
               <thead>
                 <tr className="border-b border-gray-200 bg-gray-50">
                   <th className="px-4 py-2.5 text-left font-medium text-gray-600">Name</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-gray-600">Start Time</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-gray-600">End Time</th>
                   <th className="px-4 py-2.5 text-left font-medium text-gray-600">Bubble</th>
                   <th className="px-4 py-2.5 text-left font-medium text-gray-600">Gmail</th>
                   <th className="px-4 py-2.5 text-left font-medium text-gray-600">Dialpad</th>
@@ -270,6 +274,12 @@ export default function TimeAllocationPage() {
                   <>
                     <tr key={r.user_id} className="border-b border-gray-100 last:border-0">
                       <td className="px-4 py-2.5 font-medium text-gray-900">{r.full_name}</td>
+                      <td className="px-4 py-2.5 text-gray-600">
+                        {r.first_start ? format(new Date(r.first_start), 'h:mm a') : '—'}
+                      </td>
+                      <td className="px-4 py-2.5 text-gray-600">
+                        {r.last_end ? format(new Date(r.last_end), 'h:mm a') : '—'}
+                      </td>
                       <td className="px-4 py-2.5 text-gray-600">{formatHours(r.bubble)}</td>
                       <td className="px-4 py-2.5 text-gray-600">{formatHours(r.gmail)}</td>
                       <td className="px-4 py-2.5 text-gray-600">{formatHours(r.dialpad)}</td>
@@ -294,7 +304,7 @@ export default function TimeAllocationPage() {
                     </tr>
                     {expandedUser === r.user_id && (
                       <tr key={`${r.user_id}-domains`} className="border-b border-gray-100">
-                        <td colSpan={8} className="bg-amber-50/50 px-4 py-3">
+                        <td colSpan={10} className="bg-amber-50/50 px-4 py-3">
                           {domainLoading ? (
                             <span className="text-xs text-gray-400">Loading domains...</span>
                           ) : domainBreakdown.length === 0 ? (
