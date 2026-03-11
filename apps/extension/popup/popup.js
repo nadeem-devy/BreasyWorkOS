@@ -191,7 +191,10 @@ loginForm.addEventListener('submit', async (e) => {
 });
 
 logoutBtn.addEventListener('click', async () => {
-  chrome.runtime.sendMessage({ type: 'END_SESSION' });
+  // Wait for session to end (syncs to DB) BEFORE clearing storage
+  await new Promise((resolve) => {
+    chrome.runtime.sendMessage({ type: 'END_SESSION' }, () => resolve());
+  });
   await chrome.storage.local.clear();
   showLogin();
 });
