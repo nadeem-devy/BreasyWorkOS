@@ -56,6 +56,9 @@ export default function TimeAllocationPage() {
   const [loading, setLoading] = useState(true);
   const [period, setPeriod] = useState<'day' | 'week' | 'month'>('day');
   const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [rangeMode, setRangeMode] = useState(false);
   const [expandedUser, setExpandedUser] = useState<string | null>(null);
   const [domainBreakdown, setDomainBreakdown] = useState<DomainEntry[]>([]);
   const [domainLoading, setDomainLoading] = useState(false);
@@ -64,18 +67,24 @@ export default function TimeAllocationPage() {
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/time-allocation?date=${date}&period=${period}`);
+      const url = rangeMode && startDate && endDate
+        ? `/api/admin/time-allocation?startDate=${startDate}&endDate=${endDate}`
+        : `/api/admin/time-allocation?date=${date}&period=${period}`;
+      const res = await fetch(url);
       const json = await res.json();
       setData(json.rows ?? []);
 
       // Preload domain data for all users (for chart tooltip)
-      const startDate = period === 'day'
-        ? date
-        : period === 'week'
-          ? format(new Date(new Date(date).getTime() - 6 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
-          : format(new Date(new Date(date).getTime() - 29 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd');
+      const domStart = rangeMode && startDate ? startDate : (
+        period === 'day'
+          ? date
+          : period === 'week'
+            ? format(new Date(new Date(date).getTime() - 6 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+            : format(new Date(new Date(date).getTime() - 29 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+      );
+      const domEnd = rangeMode && endDate ? endDate : date;
 
-      const domRes = await fetch(`/api/admin/domains?date=${startDate}&endDate=${date}`);
+      const domRes = await fetch(`/api/admin/domains?date=${domStart}&endDate=${domEnd}`);
       const domData = await domRes.json();
       if (Array.isArray(domData)) {
         const byUser: Record<string, DomainEntry[]> = {};
@@ -95,7 +104,7 @@ export default function TimeAllocationPage() {
       setData([]);
     }
     setLoading(false);
-  }, [period, date]);
+  }, [period, date, rangeMode, startDate, endDate]);
 
   useEffect(() => {
     fetchData();
@@ -111,14 +120,17 @@ export default function TimeAllocationPage() {
     setExpandedUser(userId);
     setDomainLoading(true);
 
-    const startDate = period === 'day'
-      ? date
-      : period === 'week'
-        ? format(new Date(new Date(date).getTime() - 6 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
-        : format(new Date(new Date(date).getTime() - 29 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd');
+    const domStart = rangeMode && startDate ? startDate : (
+      period === 'day'
+        ? date
+        : period === 'week'
+          ? format(new Date(new Date(date).getTime() - 6 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+          : format(new Date(new Date(date).getTime() - 29 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd')
+    );
+    const domEnd = rangeMode && endDate ? endDate : date;
 
     const res = await fetch(
-      `/api/admin/domains?userId=${userId}&date=${startDate}&endDate=${date}`
+      `/api/admin/domains?userId=${userId}&date=${domStart}&endDate=${domEnd}`
     );
     const domains = await res.json();
 
@@ -188,29 +200,65 @@ export default function TimeAllocationPage() {
           <BarChart3 size={20} className="text-gray-600" />
           <h1 className="text-lg font-semibold text-gray-900">Time Allocation</h1>
         </div>
-        <ExportButton view="time-allocation" params={{ start_date: date }} />
+        <ExportButton view="time-allocation" params={{ start_date: rangeMode ? startDate : date, end_date: rangeMode ? endDate : date }} />
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <div className="flex rounded-lg border border-gray-300">
           {(['day', 'week', 'month'] as const).map((p) => (
             <button
               key={p}
-              onClick={() => setPeriod(p)}
+              onClick={() => { setPeriod(p); setRangeMode(false); }}
               className={`px-3 py-1.5 text-sm capitalize ${
-                period === p ? 'bg-[#1c2b3d] text-white' : 'text-gray-600 hover:bg-gray-50'
+                !rangeMode && period === p ? 'bg-[#1c2b3d] text-white' : 'text-gray-600 hover:bg-gray-50'
               } ${p === 'day' ? 'rounded-l-lg' : ''} ${p === 'month' ? 'rounded-r-lg' : ''}`}
             >
               {p}
             </button>
           ))}
+          <button
+            onClick={() => {
+              setRangeMode(true);
+              if (!startDate) setStartDate(date);
+              if (!endDate) setEndDate(date);
+            }}
+            className={`px-3 py-1.5 text-sm border-l border-gray-300 rounded-r-lg ${
+              rangeMode ? 'bg-[#1c2b3d] text-white' : 'text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            Custom
+          </button>
         </div>
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm"
-        />
+        {rangeMode ? (
+          <div className="flex items-center gap-2">
+            <div className="flex flex-col">
+              <label className="text-[10px] font-medium text-purple-600 mb-0.5">Start Date</label>
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm"
+              />
+            </div>
+            <span className="text-sm text-gray-400 mt-4">to</span>
+            <div className="flex flex-col">
+              <label className="text-[10px] font-medium text-purple-600 mb-0.5">End Date</label>
+              <input
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm"
+              />
+            </div>
+          </div>
+        ) : (
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm"
+          />
+        )}
       </div>
 
       {loading ? (
