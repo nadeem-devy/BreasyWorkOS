@@ -146,12 +146,12 @@ export default function TimeAllocationPage() {
   const chartData = data.map((r) => ({
     name: r.full_name.split(' ')[0],
     userId: r.user_id,
-    Bubble: Math.round(r.bubble / 60),
-    Gmail: Math.round(r.gmail / 60),
-    Dialpad: Math.round(r.dialpad / 60),
-    Melio: Math.round(r.melio / 60),
-    Other: Math.round(r.other / 60),
-    Idle: Math.round(r.idle / 60),
+    Bubble: +(r.bubble / 3600).toFixed(1),
+    Gmail: +(r.gmail / 3600).toFixed(1),
+    Dialpad: +(r.dialpad / 3600).toFixed(1),
+    Melio: +(r.melio / 3600).toFixed(1),
+    Other: +(r.other / 3600).toFixed(1),
+    Idle: +(r.idle / 3600).toFixed(1),
   }));
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -167,7 +167,7 @@ export default function TimeAllocationPage() {
         {payload.map((entry: { name: string; value: number; color: string }) => (
           <div key={entry.name} className="flex items-center justify-between gap-4" style={{ color: entry.color }}>
             <span>{entry.name}</span>
-            <span className="font-medium">{entry.value}m</span>
+            <span className="font-medium">{entry.value}h</span>
           </div>
         ))}
         {topDomains.length > 0 && (
@@ -272,7 +272,7 @@ export default function TimeAllocationPage() {
           <div className="rounded-lg border border-gray-200 bg-white p-4">
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={chartData} layout="vertical" margin={{ left: 60 }}>
-                <XAxis type="number" label={{ value: 'Minutes', position: 'insideBottom', offset: -5 }} />
+                <XAxis type="number" label={{ value: 'Hours', position: 'insideBottom', offset: -5 }} />
                 <YAxis type="category" dataKey="name" width={60} tick={{ fontSize: 12 }} />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend />
