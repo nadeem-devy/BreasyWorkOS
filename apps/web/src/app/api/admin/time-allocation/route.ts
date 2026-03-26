@@ -39,6 +39,18 @@ export async function GET(request: NextRequest) {
     last_end: string | null;
   }
 
+  // Fetch Dialpad API call durations per user for the date range
+  const { data: dialpadCalls } = await supabase
+    .from('OS_dialpad_events')
+    .select('user_id, duration_seconds')
+    .gte('started_at', `${startDate}T00:00:00`)
+    .lte('started_at', `${endDate}T23:59:59`);
+
+  const dialpadApiSeconds: Record<string, number> = {};
+  for (const c of dialpadCalls ?? []) {
+    dialpadApiSeconds[c.user_id] = (dialpadApiSeconds[c.user_id] ?? 0) + (c.duration_seconds ?? 0);
+  }
+
   const rows: AllocationRow[] = [];
   for (const profile of profiles) {
     const { data: sessions } = await supabase
@@ -62,6 +74,13 @@ export async function GET(request: NextRequest) {
         }),
         { bubble: 0, gmail: 0, dialpad: 0, melio: 0, other: 0, idle: 0, total: 0 }
       );
+
+      // Use the higher of extension-tracked vs Dialpad API call duration
+      const apiDialpad = dialpadApiSeconds[profile.id] ?? 0;
+      if (apiDialpad > totals.dialpad) {
+        totals.dialpad = apiDialpad;
+      }
+
       const firstStart = sessions[0]?.started_at ?? null;
       const lastEnd = sessions[sessions.length - 1]?.ended_at ?? null;
       rows.push({ user_id: profile.id, full_name: profile.full_name, ...totals, session_count: sessions.length, first_start: firstStart, last_end: lastEnd });
