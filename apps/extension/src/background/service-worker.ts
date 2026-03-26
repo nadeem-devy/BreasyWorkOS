@@ -2,8 +2,8 @@ import { classifyUrl, isTrackedApp } from '../lib/app-classifier';
 import { sanitizeUrl, sanitizeTitle } from '../lib/url-sanitizer';
 import { initBuffer, addEvent, flushBuffer } from '../lib/event-buffer';
 import { initIdleDetector, getIdleState } from '../lib/idle-detector';
-import { startSession, switchApp, markIdle, markActive, getSessionId, endSession, syncSessionToDb, incrementEventCount, isSessionExpired } from '../lib/session-manager';
-import { getUserId, getSupabase, clearAuth } from '../lib/supabase-client';
+import { startSession, switchApp, markIdle, markActive, getSessionId, endSession, syncSessionToDb, incrementEventCount } from '../lib/session-manager';
+import { getUserId } from '../lib/supabase-client';
 import { trackDomain, pauseDomainTracking, resumeDomainTracking, syncDomainsToDB } from '../lib/domain-tracker';
 import type { TrackedApp } from '../types/events';
 
@@ -145,21 +145,6 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   // Always sync session timers and domain data to DB
   await syncSessionToDb();
   await syncDomainsToDB();
-
-  // Auto-logout after 8 hours
-  if (await isSessionExpired()) {
-    await addEvent({
-      user_id: userId,
-      app: 'other',
-      event_type: 'sign_off',
-      metadata: { reason: 'auto_logout_8h' },
-      session_id: (await getSessionId()) ?? undefined,
-    });
-    await endSession();
-    await flushBuffer();
-    await clearAuth();
-    return;
-  }
 
   const idleState = getIdleState();
   if (idleState !== 'active') return;
