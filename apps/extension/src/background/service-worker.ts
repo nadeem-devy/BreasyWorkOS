@@ -9,8 +9,19 @@ import type { TrackedApp } from '../types/events';
 
 let lastTrackedApp: TrackedApp | null = null;
 
+// Persist lastTrackedApp so it survives service worker restarts
+async function getLastTrackedApp(): Promise<TrackedApp | null> {
+  const result = await chrome.storage.local.get('lastTrackedApp');
+  return result.lastTrackedApp ?? null;
+}
+async function setLastTrackedApp(app: TrackedApp | null) {
+  lastTrackedApp = app;
+  await chrome.storage.local.set({ lastTrackedApp: app });
+}
+
 // Initialize on install/startup
 chrome.runtime.onInstalled.addListener(async () => {
+  lastTrackedApp = await getLastTrackedApp();
   await initBuffer();
   initIdleDetector();
   chrome.alarms.create('heartbeat', { periodInMinutes: 2 });
@@ -18,6 +29,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 });
 
 chrome.runtime.onStartup.addListener(async () => {
+  lastTrackedApp = await getLastTrackedApp();
   await initBuffer();
   initIdleDetector();
   chrome.alarms.create('heartbeat', { periodInMinutes: 2 });
@@ -107,7 +119,7 @@ async function handleTabChange(userId: string, url: string, title: string) {
     await incrementEventCount();
 
     await switchApp(app);
-    lastTrackedApp = app;
+    await setLastTrackedApp(app);
   } else {
     // Same app but URL changed (navigation within app)
     await addEvent({
@@ -160,6 +172,15 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
   const url = tabs[0]?.url ?? '';
   const app = classifyUrl(url);
+
+  // Ensure switchApp is called even after service worker restart
+  if (!lastTrackedApp) {
+    lastTrackedApp = await getLastTrackedApp();
+  }
+  if (app !== lastTrackedApp) {
+    await switchApp(app);
+    await setLastTrackedApp(app);
+  }
 
   await addEvent({
     user_id: userId,
