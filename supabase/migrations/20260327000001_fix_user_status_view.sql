@@ -1,6 +1,21 @@
--- Fix v_user_current_status: use session updated_at for reliable online detection,
--- use LATERAL join to pick only the most recent session per user,
--- and increase thresholds to match 15-minute idle setting in extension.
+-- Fix v_user_current_status: use GREATEST of session updated_at and last event
+-- for reliable online detection. Create missing updated_at trigger.
+
+-- Create trigger function if missing
+CREATE OR REPLACE FUNCTION update_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Create trigger on OS_sessions
+DROP TRIGGER IF EXISTS update_os_sessions_updated_at ON "OS_sessions";
+CREATE TRIGGER update_os_sessions_updated_at
+BEFORE UPDATE ON "OS_sessions"
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at();
 
 -- Close all stale open sessions (not updated in 30+ min)
 UPDATE "OS_sessions"
@@ -8,6 +23,7 @@ SET ended_at = updated_at
 WHERE ended_at IS NULL
 AND updated_at < NOW() - INTERVAL '30 minutes';
 
+-- Recreate view using GREATEST of session and event timestamps
 CREATE OR REPLACE VIEW v_user_current_status AS
 SELECT
   p.id AS user_id, p.full_name, p.role, p.market,
@@ -17,8 +33,8 @@ SELECT
   CASE
     WHEN s.id IS NULL THEN 'offline'
     WHEN s.ended_at IS NOT NULL THEN 'offline'
-    WHEN s.updated_at > NOW() - INTERVAL '6 minutes' THEN 'active'
-    WHEN s.updated_at > NOW() - INTERVAL '20 minutes' THEN 'idle'
+    WHEN GREATEST(s.updated_at, ae.created_at) > NOW() - INTERVAL '6 minutes' THEN 'active'
+    WHEN GREATEST(s.updated_at, ae.created_at) > NOW() - INTERVAL '20 minutes' THEN 'idle'
     ELSE 'offline'
   END AS status,
   s.time_bubble, s.time_gmail, s.time_dialpad, s.time_melio
