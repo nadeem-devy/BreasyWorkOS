@@ -142,12 +142,21 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   const userId = await getUserId();
   if (!userId) return;
 
-  // Always sync session timers and domain data to DB
+  // Query actual Chrome idle state (not the in-memory variable which resets on worker restart)
+  const realIdleState = await chrome.idle.queryState(900);
+
+  // Reconcile: if Chrome says active but session thinks idle, fix it
+  if (realIdleState === 'active') {
+    await markActive();
+  } else {
+    await markIdle();
+  }
+
+  // Sync session timers and domain data to DB
   await syncSessionToDb();
   await syncDomainsToDB();
 
-  const idleState = getIdleState();
-  if (idleState !== 'active') return;
+  if (realIdleState !== 'active') return;
 
   let sessionId = await getSessionId();
   if (!sessionId) {
