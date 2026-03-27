@@ -1,7 +1,7 @@
 import { addEvent } from './event-buffer';
 import { getUserId } from './supabase-client';
 
-const IDLE_THRESHOLD_SECONDS = 300; // 5 minutes
+const IDLE_THRESHOLD_SECONDS = 900; // 15 minutes
 let currentIdleState: chrome.idle.IdleState = 'active';
 
 export function initIdleDetector() {

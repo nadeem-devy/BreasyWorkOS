@@ -3,24 +3,36 @@ const dashboardView = document.getElementById('dashboard-view');
 const loginForm = document.getElementById('login-form');
 const loginError = document.getElementById('login-error');
 const logoutBtn = document.getElementById('logout-btn');
+const statusBanner = document.getElementById('status-banner');
 const statusDot = document.getElementById('status-dot');
 const statusText = document.getElementById('status-text');
+const statusSub = document.getElementById('status-sub');
 const currentAppEl = document.getElementById('current-app');
 const sessionTimeEl = document.getElementById('session-time');
 const bufferCountEl = document.getElementById('buffer-count');
 const appBarsEl = document.getElementById('app-bars');
+const refreshBtn = document.getElementById('refresh-btn');
+const headerRefreshBtn = document.getElementById('header-refresh-btn');
+const footer = document.getElementById('footer');
 
 const APP_COLORS = { bubble: '#3B82F6', gmail: '#EF4444', dialpad: '#8B5CF6', melio: '#10B981' };
 const APP_NAMES = { bubble: 'Bubble', gmail: 'Gmail', dialpad: 'Dialpad', melio: 'Melio', other: 'Other' };
+
+const STATUS_LABELS = {
+  active: { label: 'Online', sub: 'Tracking your activity' },
+  idle: { label: 'Idle', sub: 'No input detected' },
+  offline: { label: 'Offline', sub: 'Session not active' },
+};
+
+// Store original button content for restore after sync
+const refreshBtnOriginalContent = refreshBtn ? refreshBtn.cloneNode(true).childNodes : null;
 
 async function init() {
   const { userId } = await chrome.storage.local.get('userId');
 
   if (userId) {
-    // Verify we still have valid auth (auto-logout clears userId)
     const { accessToken } = await chrome.storage.local.get('accessToken');
     if (!accessToken) {
-      // Auto-logout happened — clear everything and show login
       await chrome.storage.local.clear();
       showLogin();
       return;
@@ -35,6 +47,8 @@ function showLogin() {
   loginView.style.display = 'block';
   dashboardView.style.display = 'none';
   logoutBtn.style.display = 'none';
+  refreshBtn.style.display = 'none';
+  footer.style.display = 'none';
 }
 
 function createAppBar(app, seconds, maxTime) {
@@ -67,18 +81,47 @@ function createAppBar(app, seconds, maxTime) {
   return row;
 }
 
+function updateStatus(state, sessionActive) {
+  const key = !sessionActive ? 'offline' : state;
+  const info = STATUS_LABELS[key] || STATUS_LABELS.offline;
+
+  statusBanner.className = 'status-banner ' + key;
+  statusDot.className = 'status-dot ' + key;
+  statusText.textContent = info.label;
+  statusSub.textContent = info.sub;
+}
+
+function restoreRefreshBtn() {
+  // Clear and rebuild the refresh button content using DOM methods
+  while (refreshBtn.firstChild) refreshBtn.removeChild(refreshBtn.firstChild);
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.style.width = '12px';
+  svg.style.height = '12px';
+  svg.style.fill = '#6b7280';
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z');
+  svg.appendChild(path);
+  refreshBtn.appendChild(svg);
+  refreshBtn.appendChild(document.createTextNode(' Sync Now'));
+}
+
 async function showDashboard() {
   loginView.style.display = 'none';
   dashboardView.style.display = 'block';
   logoutBtn.style.display = 'block';
+  refreshBtn.style.display = 'flex';
+  footer.style.display = 'flex';
 
   // Get status from service worker
   chrome.runtime.sendMessage({ type: 'GET_STATUS' }, (response) => {
-    if (!response) return;
+    if (!response) {
+      updateStatus('offline', false);
+      return;
+    }
 
     const state = response.idleState === 'active' ? 'active' : response.idleState === 'idle' ? 'idle' : 'offline';
-    statusDot.className = 'status-dot ' + state;
-    statusText.textContent = state.charAt(0).toUpperCase() + state.slice(1);
+    updateStatus(state, response.sessionActive);
     currentAppEl.textContent = APP_NAMES[response.currentApp] || '\u2014';
   });
 
@@ -90,21 +133,45 @@ async function showDashboard() {
     const m = Math.floor((elapsed % 3600) / 60);
     sessionTimeEl.textContent = h > 0 ? h + 'h ' + m + 'm' : m + 'm';
 
-    // App time bars (using safe DOM methods)
+    // App time bars
     const timers = currentSession.timers || {};
     const maxTime = Math.max(1, ...Object.values(timers));
 
-    appBarsEl.replaceChildren(); // Clear safely
+    appBarsEl.replaceChildren();
     for (const [app, seconds] of Object.entries(timers)) {
       if (app === 'other') continue;
       appBarsEl.appendChild(createAppBar(app, seconds, maxTime));
     }
+  } else {
+    sessionTimeEl.textContent = 'No active session';
   }
 
   // Get buffer size
   const { eventBuffer } = await chrome.storage.local.get('eventBuffer');
   bufferCountEl.textContent = String((eventBuffer || []).length);
 }
+
+// Refresh / Sync button handler
+async function handleRefresh() {
+  headerRefreshBtn.classList.add('spinning');
+  refreshBtn.disabled = true;
+  refreshBtn.textContent = 'Syncing...';
+
+  try {
+    await new Promise((resolve) => {
+      chrome.runtime.sendMessage({ type: 'FORCE_FLUSH' }, () => resolve());
+    });
+    // Refresh the dashboard display
+    await showDashboard();
+  } finally {
+    headerRefreshBtn.classList.remove('spinning');
+    refreshBtn.disabled = false;
+    restoreRefreshBtn();
+  }
+}
+
+refreshBtn.addEventListener('click', handleRefresh);
+headerRefreshBtn.addEventListener('click', handleRefresh);
 
 // Breasy WorkOS Supabase config (public anon key - safe to embed)
 const SUPABASE_URL = 'https://caursmdeoghqixudiscb.supabase.co';
